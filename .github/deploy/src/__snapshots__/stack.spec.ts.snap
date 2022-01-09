@@ -1,0 +1,1649 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack should create the expected stack for the master branch 1`] = `
+Object {
+  "Mappings": Object {
+    "AWSCloudFrontPartitionHostedZoneIdMap": Object {
+      "aws": Object {
+        "zoneId": "Z2FDTNDATAQYW2",
+      },
+      "aws-cn": Object {
+        "zoneId": "Z3RFFRIM2A3IF5",
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebArtifactHash0F233B13": Object {
+      "Description": "Artifact hash for asset \\"0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6eb\\"",
+      "Type": "String",
+    },
+    "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3Bucket4E3B9FF5": Object {
+      "Description": "S3 bucket for asset \\"0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6eb\\"",
+      "Type": "String",
+    },
+    "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3VersionKey452327A9": Object {
+      "Description": "S3 key for asset version \\"0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6eb\\"",
+      "Type": "String",
+    },
+    "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656ArtifactHash03CBE45C": Object {
+      "Description": "Artifact hash for asset \\"9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656\\"",
+      "Type": "String",
+    },
+    "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93": Object {
+      "Description": "S3 bucket for asset \\"9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656\\"",
+      "Type": "String",
+    },
+    "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B": Object {
+      "Description": "S3 key for asset version \\"9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656\\"",
+      "Type": "String",
+    },
+    "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cArtifactHashBEAA5C03": Object {
+      "Description": "Artifact hash for asset \\"afa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913c\\"",
+      "Type": "String",
+    },
+    "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3Bucket5F35CB14": Object {
+      "Description": "S3 bucket for asset \\"afa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913c\\"",
+      "Type": "String",
+    },
+    "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3VersionKey940B5E47": Object {
+      "Description": "S3 key for asset version \\"afa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913c\\"",
+      "Type": "String",
+    },
+    "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0ArtifactHash9D8F179A": Object {
+      "Description": "Artifact hash for asset \\"e3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0\\"",
+      "Type": "String",
+    },
+    "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3BucketB3DDCC13": Object {
+      "Description": "S3 bucket for asset \\"e3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0\\"",
+      "Type": "String",
+    },
+    "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3VersionKey3418DF70": Object {
+      "Description": "S3 key for asset version \\"e3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3": Object {
+      "Description": "Artifact hash for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7": Object {
+      "Description": "S3 bucket for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F": Object {
+      "Description": "S3 key for asset version \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": Object {
+      "DependsOn": Array [
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3BucketB3DDCC13",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3VersionKey3418DF70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3VersionKey3418DF70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.handler",
+        "Layers": Array [
+          Object {
+            "Ref": "staticWebsiteBucketDeploymentAwsCliLayer92C42D70",
+          },
+        ],
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.7",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+                      },
+                    ],
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "staticWebsiteBucketF3428350",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "staticWebsiteBucketF3428350",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": Array [
+                "cloudfront:GetInvalidation",
+                "cloudfront:CreateInvalidation",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "Roles": Array [
+          Object {
+            "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "aRecord97A4C4DC": Object {
+      "Properties": Object {
+        "AliasTarget": Object {
+          "DNSName": Object {
+            "Fn::GetAtt": Array [
+              "distributionCFDistribution99A57736",
+              "DomainName",
+            ],
+          },
+          "HostedZoneId": Object {
+            "Fn::FindInMap": Array [
+              "AWSCloudFrontPartitionHostedZoneIdMap",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              "zoneId",
+            ],
+          },
+        },
+        "HostedZoneId": "",
+        "Name": "nextjs-serverless-static-site.tylangesmith.com.",
+        "Type": "A",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "certificateCertificateRequestorFunction5D4BA95F": Object {
+      "DependsOn": Array [
+        "certificateCertificateRequestorFunctionServiceRoleDefaultPolicy8ED55FEE",
+        "certificateCertificateRequestorFunctionServiceRoleA4FA97BB",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3Bucket4E3B9FF5",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3VersionKey452327A9",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3VersionKey452327A9",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.certificateRequestHandler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "certificateCertificateRequestorFunctionServiceRoleA4FA97BB",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "certificateCertificateRequestorFunctionServiceRoleA4FA97BB": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "certificateCertificateRequestorFunctionServiceRoleDefaultPolicy8ED55FEE": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "acm:RequestCertificate",
+                "acm:DescribeCertificate",
+                "acm:DeleteCertificate",
+                "acm:AddTagsToCertificate",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": "route53:GetChange",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": "route53:changeResourceRecordSets",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    "arn:",
+                    Object {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":route53:::hostedzone/",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "certificateCertificateRequestorFunctionServiceRoleDefaultPolicy8ED55FEE",
+        "Roles": Array [
+          Object {
+            "Ref": "certificateCertificateRequestorFunctionServiceRoleA4FA97BB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "certificateCertificateRequestorResourceFD86DD58": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DomainName": "nextjs-serverless-static-site.tylangesmith.com",
+        "HostedZoneId": "",
+        "Region": "us-east-1",
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "certificateCertificateRequestorFunction5D4BA95F",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::CustomResource",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "distributionCFDistribution99A57736": Object {
+      "Properties": Object {
+        "DistributionConfig": Object {
+          "Aliases": Array [
+            "nextjs-serverless-static-site.tylangesmith.com",
+          ],
+          "CacheBehaviors": Array [
+            Object {
+              "AllowedMethods": Array [
+                "GET",
+                "HEAD",
+              ],
+              "CachedMethods": Array [
+                "GET",
+                "HEAD",
+              ],
+              "Compress": true,
+              "ForwardedValues": Object {
+                "Cookies": Object {
+                  "Forward": "none",
+                },
+                "QueryString": false,
+              },
+              "PathPattern": "/_next/*",
+              "TargetOriginId": "origin1",
+              "ViewerProtocolPolicy": "redirect-to-https",
+            },
+          ],
+          "DefaultCacheBehavior": Object {
+            "AllowedMethods": Array [
+              "GET",
+              "HEAD",
+            ],
+            "CachedMethods": Array [
+              "GET",
+              "HEAD",
+            ],
+            "Compress": true,
+            "ForwardedValues": Object {
+              "Cookies": Object {
+                "Forward": "none",
+              },
+              "QueryString": false,
+            },
+            "LambdaFunctionAssociations": Array [
+              Object {
+                "EventType": "origin-request",
+                "LambdaFunctionARN": Object {
+                  "Ref": "mapperfunctionversionB9F26EB1",
+                },
+              },
+            ],
+            "TargetOriginId": "origin1",
+            "ViewerProtocolPolicy": "redirect-to-https",
+          },
+          "DefaultRootObject": "index.html",
+          "Enabled": true,
+          "HttpVersion": "http2",
+          "IPV6Enabled": true,
+          "Origins": Array [
+            Object {
+              "ConnectionAttempts": 3,
+              "ConnectionTimeout": 10,
+              "CustomOriginConfig": Object {
+                "HTTPPort": 80,
+                "HTTPSPort": 443,
+                "OriginKeepaliveTimeout": 5,
+                "OriginProtocolPolicy": "http-only",
+                "OriginReadTimeout": 30,
+                "OriginSSLProtocols": Array [
+                  "TLSv1.2",
+                ],
+              },
+              "DomainName": Object {
+                "Fn::Select": Array [
+                  2,
+                  Object {
+                    "Fn::Split": Array [
+                      "/",
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "staticWebsiteBucketF3428350",
+                          "WebsiteURL",
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              "Id": "origin1",
+            },
+          ],
+          "PriceClass": "PriceClass_100",
+          "ViewerCertificate": Object {
+            "AcmCertificateArn": Object {
+              "Fn::GetAtt": Array [
+                "certificateCertificateRequestorResourceFD86DD58",
+                "Arn",
+              ],
+            },
+            "MinimumProtocolVersion": "TLSv1",
+            "SslSupportMethod": "sni-only",
+          },
+        },
+      },
+      "Type": "AWS::CloudFront::Distribution",
+    },
+    "mapperexecutionroleD5DDF1F5": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "edgelambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "mapperexecutionroleDefaultPolicyEC553C22": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "mapperexecutionroleDefaultPolicyEC553C22",
+        "Roles": Array [
+          Object {
+            "Ref": "mapperexecutionroleD5DDF1F5",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "mapperfunction80B2CA22": Object {
+      "DependsOn": Array [
+        "mapperexecutionroleDefaultPolicyEC553C22",
+        "mapperexecutionroleD5DDF1F5",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3Bucket5F35CB14",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3VersionKey940B5E47",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3VersionKey940B5E47",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "mapperFunction.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "mapperexecutionroleD5DDF1F5",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "mapperfunctionversionB9F26EB1": Object {
+      "Properties": Object {
+        "FunctionName": Object {
+          "Ref": "mapperfunction80B2CA22",
+        },
+      },
+      "Type": "AWS::Lambda::Version",
+    },
+    "staticWebsiteBucketDeploymentAwsCliLayer92C42D70": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "/opt/awscli/aws",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "staticWebsiteBucketDeploymentCustomResource0139D91B": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DestinationBucketName": Object {
+          "Ref": "staticWebsiteBucketF3428350",
+        },
+        "DistributionId": Object {
+          "Ref": "distributionCFDistribution99A57736",
+        },
+        "Prune": true,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "Arn",
+          ],
+        },
+        "SourceBucketNames": Array [
+          Object {
+            "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+          },
+        ],
+        "SourceObjectKeys": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "Custom::CDKBucketDeployment",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "staticWebsiteBucketF3428350": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "BucketName": "nextjs-serverless-static-site.tylangesmith.com",
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:cr-owned:647c3df8",
+            "Value": "true",
+          },
+        ],
+        "WebsiteConfiguration": Object {
+          "ErrorDocument": "404.html",
+          "IndexDocument": "index.html",
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "staticWebsiteBucketPolicy51D4ABCA": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "staticWebsiteBucketF3428350",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "staticWebsiteBucketF3428350",
+                        "Arn",
+                      ],
+                    },
+                    "/*",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;
+
+exports[`Stack should create the expected stack for the non-master branch 1`] = `
+Object {
+  "Mappings": Object {
+    "AWSCloudFrontPartitionHostedZoneIdMap": Object {
+      "aws": Object {
+        "zoneId": "Z2FDTNDATAQYW2",
+      },
+      "aws-cn": Object {
+        "zoneId": "Z3RFFRIM2A3IF5",
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebArtifactHash0F233B13": Object {
+      "Description": "Artifact hash for asset \\"0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6eb\\"",
+      "Type": "String",
+    },
+    "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3Bucket4E3B9FF5": Object {
+      "Description": "S3 bucket for asset \\"0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6eb\\"",
+      "Type": "String",
+    },
+    "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3VersionKey452327A9": Object {
+      "Description": "S3 key for asset version \\"0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6eb\\"",
+      "Type": "String",
+    },
+    "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656ArtifactHash03CBE45C": Object {
+      "Description": "Artifact hash for asset \\"9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656\\"",
+      "Type": "String",
+    },
+    "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93": Object {
+      "Description": "S3 bucket for asset \\"9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656\\"",
+      "Type": "String",
+    },
+    "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B": Object {
+      "Description": "S3 key for asset version \\"9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656\\"",
+      "Type": "String",
+    },
+    "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cArtifactHashBEAA5C03": Object {
+      "Description": "Artifact hash for asset \\"afa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913c\\"",
+      "Type": "String",
+    },
+    "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3Bucket5F35CB14": Object {
+      "Description": "S3 bucket for asset \\"afa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913c\\"",
+      "Type": "String",
+    },
+    "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3VersionKey940B5E47": Object {
+      "Description": "S3 key for asset version \\"afa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913c\\"",
+      "Type": "String",
+    },
+    "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0ArtifactHash9D8F179A": Object {
+      "Description": "Artifact hash for asset \\"e3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0\\"",
+      "Type": "String",
+    },
+    "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3BucketB3DDCC13": Object {
+      "Description": "S3 bucket for asset \\"e3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0\\"",
+      "Type": "String",
+    },
+    "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3VersionKey3418DF70": Object {
+      "Description": "S3 key for asset version \\"e3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3": Object {
+      "Description": "Artifact hash for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7": Object {
+      "Description": "S3 bucket for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F": Object {
+      "Description": "S3 key for asset version \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": Object {
+      "DependsOn": Array [
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3BucketB3DDCC13",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3VersionKey3418DF70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse3d9996b6fafcc7da88312672e15e3cc925b02cffc6f01a615d81f22303e3ae0S3VersionKey3418DF70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.handler",
+        "Layers": Array [
+          Object {
+            "Ref": "staticWebsiteBucketDeploymentAwsCliLayer92C42D70",
+          },
+        ],
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.7",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+                      },
+                    ],
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "staticWebsiteBucketF3428350",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "staticWebsiteBucketF3428350",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": Array [
+                "cloudfront:GetInvalidation",
+                "cloudfront:CreateInvalidation",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "Roles": Array [
+          Object {
+            "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "aRecord97A4C4DC": Object {
+      "Properties": Object {
+        "AliasTarget": Object {
+          "DNSName": Object {
+            "Fn::GetAtt": Array [
+              "distributionCFDistribution99A57736",
+              "DomainName",
+            ],
+          },
+          "HostedZoneId": Object {
+            "Fn::FindInMap": Array [
+              "AWSCloudFrontPartitionHostedZoneIdMap",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              "zoneId",
+            ],
+          },
+        },
+        "HostedZoneId": "",
+        "Name": "blog.nextjs-serverless-static-site.tylangesmith.com.",
+        "Type": "A",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "certificateCertificateRequestorFunction5D4BA95F": Object {
+      "DependsOn": Array [
+        "certificateCertificateRequestorFunctionServiceRoleDefaultPolicy8ED55FEE",
+        "certificateCertificateRequestorFunctionServiceRoleA4FA97BB",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3Bucket4E3B9FF5",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3VersionKey452327A9",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters0656e5a71076566b8f7f3f2bf90bb1d480ccbf2573d2e15e8ca4155f5800b6ebS3VersionKey452327A9",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.certificateRequestHandler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "certificateCertificateRequestorFunctionServiceRoleA4FA97BB",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs12.x",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "certificateCertificateRequestorFunctionServiceRoleA4FA97BB": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "certificateCertificateRequestorFunctionServiceRoleDefaultPolicy8ED55FEE": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "acm:RequestCertificate",
+                "acm:DescribeCertificate",
+                "acm:DeleteCertificate",
+                "acm:AddTagsToCertificate",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": "route53:GetChange",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": "route53:changeResourceRecordSets",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    "arn:",
+                    Object {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":route53:::hostedzone/",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "certificateCertificateRequestorFunctionServiceRoleDefaultPolicy8ED55FEE",
+        "Roles": Array [
+          Object {
+            "Ref": "certificateCertificateRequestorFunctionServiceRoleA4FA97BB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "certificateCertificateRequestorResourceFD86DD58": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DomainName": "blog.nextjs-serverless-static-site.tylangesmith.com",
+        "HostedZoneId": "",
+        "Region": "us-east-1",
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "certificateCertificateRequestorFunction5D4BA95F",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::CustomResource",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "distributionCFDistribution99A57736": Object {
+      "Properties": Object {
+        "DistributionConfig": Object {
+          "Aliases": Array [
+            "blog.nextjs-serverless-static-site.tylangesmith.com",
+          ],
+          "CacheBehaviors": Array [
+            Object {
+              "AllowedMethods": Array [
+                "GET",
+                "HEAD",
+              ],
+              "CachedMethods": Array [
+                "GET",
+                "HEAD",
+              ],
+              "Compress": true,
+              "ForwardedValues": Object {
+                "Cookies": Object {
+                  "Forward": "none",
+                },
+                "QueryString": false,
+              },
+              "PathPattern": "/_next/*",
+              "TargetOriginId": "origin1",
+              "ViewerProtocolPolicy": "redirect-to-https",
+            },
+          ],
+          "DefaultCacheBehavior": Object {
+            "AllowedMethods": Array [
+              "GET",
+              "HEAD",
+            ],
+            "CachedMethods": Array [
+              "GET",
+              "HEAD",
+            ],
+            "Compress": true,
+            "ForwardedValues": Object {
+              "Cookies": Object {
+                "Forward": "none",
+              },
+              "QueryString": false,
+            },
+            "LambdaFunctionAssociations": Array [
+              Object {
+                "EventType": "origin-request",
+                "LambdaFunctionARN": Object {
+                  "Ref": "mapperfunctionversionB9F26EB1",
+                },
+              },
+            ],
+            "TargetOriginId": "origin1",
+            "ViewerProtocolPolicy": "redirect-to-https",
+          },
+          "DefaultRootObject": "index.html",
+          "Enabled": true,
+          "HttpVersion": "http2",
+          "IPV6Enabled": true,
+          "Origins": Array [
+            Object {
+              "ConnectionAttempts": 3,
+              "ConnectionTimeout": 10,
+              "CustomOriginConfig": Object {
+                "HTTPPort": 80,
+                "HTTPSPort": 443,
+                "OriginKeepaliveTimeout": 5,
+                "OriginProtocolPolicy": "http-only",
+                "OriginReadTimeout": 30,
+                "OriginSSLProtocols": Array [
+                  "TLSv1.2",
+                ],
+              },
+              "DomainName": Object {
+                "Fn::Select": Array [
+                  2,
+                  Object {
+                    "Fn::Split": Array [
+                      "/",
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "staticWebsiteBucketF3428350",
+                          "WebsiteURL",
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              "Id": "origin1",
+            },
+          ],
+          "PriceClass": "PriceClass_100",
+          "ViewerCertificate": Object {
+            "AcmCertificateArn": Object {
+              "Fn::GetAtt": Array [
+                "certificateCertificateRequestorResourceFD86DD58",
+                "Arn",
+              ],
+            },
+            "MinimumProtocolVersion": "TLSv1",
+            "SslSupportMethod": "sni-only",
+          },
+        },
+      },
+      "Type": "AWS::CloudFront::Distribution",
+    },
+    "mapperexecutionroleD5DDF1F5": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "edgelambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "mapperexecutionroleDefaultPolicyEC553C22": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "mapperexecutionroleDefaultPolicyEC553C22",
+        "Roles": Array [
+          Object {
+            "Ref": "mapperexecutionroleD5DDF1F5",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "mapperfunction80B2CA22": Object {
+      "DependsOn": Array [
+        "mapperexecutionroleDefaultPolicyEC553C22",
+        "mapperexecutionroleD5DDF1F5",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3Bucket5F35CB14",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3VersionKey940B5E47",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersafa996ab63396ad3be2d14e0bc1b971f946fd1765151a78ec974981cd0c5913cS3VersionKey940B5E47",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "mapperFunction.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "mapperexecutionroleD5DDF1F5",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "mapperfunctionversionB9F26EB1": Object {
+      "Properties": Object {
+        "FunctionName": Object {
+          "Ref": "mapperfunction80B2CA22",
+        },
+      },
+      "Type": "AWS::Lambda::Version",
+    },
+    "staticWebsiteBucketDeploymentAwsCliLayer92C42D70": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "/opt/awscli/aws",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "staticWebsiteBucketDeploymentCustomResource0139D91B": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DestinationBucketName": Object {
+          "Ref": "staticWebsiteBucketF3428350",
+        },
+        "DistributionId": Object {
+          "Ref": "distributionCFDistribution99A57736",
+        },
+        "Prune": true,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "Arn",
+          ],
+        },
+        "SourceBucketNames": Array [
+          Object {
+            "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+          },
+        ],
+        "SourceObjectKeys": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "Custom::CDKBucketDeployment",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "staticWebsiteBucketF3428350": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "BucketName": "blog.nextjs-serverless-static-site.tylangesmith.com",
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:cr-owned:647c3df8",
+            "Value": "true",
+          },
+        ],
+        "WebsiteConfiguration": Object {
+          "ErrorDocument": "404.html",
+          "IndexDocument": "index.html",
+        },
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "staticWebsiteBucketPolicy51D4ABCA": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "staticWebsiteBucketF3428350",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Principal": Object {
+                "AWS": "*",
+              },
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "staticWebsiteBucketF3428350",
+                        "Arn",
+                      ],
+                    },
+                    "/*",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
+    },
+  },
+}
+`;

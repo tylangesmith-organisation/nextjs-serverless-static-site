@@ -1,0 +1,51 @@
+name: Deploy
+on: [push]
+
+jobs:
+  build-website:
+    name: Lint, Test and Build Website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+      - run: .github/deploy/scripts/lint_test_build.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build.zip
+          path: build.zip
+
+  test-cdk:
+    name: Lint and Test CDK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+      - run: .github/deploy/scripts/lint_test_build_cdk.sh
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: [build-website, test-cdk]
+    concurrency: aws-deploy-step
+    env:
+      ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+      AWS_DEFAULT_REGION: us-east-1
+      DOMAIN_NAME: nextjs-serverless-static-site.tylangesmith.com
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+      - uses: actions/download-artifact@v2
+        with:
+          name: build.zip
+          path: .github/deploy
+      - run: .github/deploy/scripts/setBranch.sh
+      - run: .github/deploy/scripts/deploy.sh
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
