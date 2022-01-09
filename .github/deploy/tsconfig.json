@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2018",
+    "outDir": "./",
+    "baseUrl": "./",
     "lib": [],
     "allowJs": true,
     "skipLibCheck": true,
