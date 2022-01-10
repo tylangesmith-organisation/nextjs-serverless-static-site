@@ -774,7 +774,7 @@ Object {
         "BucketName": "nextjs-serverless-static-site.tylangesmith.com",
         "Tags": Array [
           Object {
-            "Key": "aws-cdk:cr-owned:647c3df8",
+            "Key": "aws-cdk:cr-owned:4330172b",
             "Value": "true",
           },
         ],
@@ -1598,7 +1598,7 @@ Object {
         "BucketName": "blog.nextjs-serverless-static-site.tylangesmith.com",
         "Tags": Array [
           Object {
-            "Key": "aws-cdk:cr-owned:647c3df8",
+            "Key": "aws-cdk:cr-owned:4330172b",
             "Value": "true",
           },
         ],
