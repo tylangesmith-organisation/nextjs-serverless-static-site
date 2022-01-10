@@ -19,5 +19,10 @@ new Stack(app, {
   stackName: `tylangesmith-${branchName}`,
   url,
   domainName,
-  subDomainName
+  subDomainName,
+  env: {
+    // Need to pass these in to lookup the route53 hostedZone
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.CDK_DEFAULT_REGION
+  }
 })
