@@ -34,7 +34,8 @@ jobs:
     env:
       ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
       AWS_DEFAULT_REGION: us-east-1
-      DOMAIN_NAME: nextjs-serverless-static-site.tylangesmith.com
+      DOMAIN_NAME: tylangesmith.com
+      BASE_SUBDOMAIN_NAME: nextjs-serverless-static-site
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2

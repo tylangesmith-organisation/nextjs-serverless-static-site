@@ -3,28 +3,32 @@ import { getSubDomainName, getUrl, isMasterBranch } from './helper'
 describe('getSubDomainName', () => {
   it('should return branch name for non master branch', () => {
     // Arrange
+    const baseSubdomainName = 'nextjs-serverless-static-site'
     const branchName = 'formatting'
 
     // Act
     const subDomain = getSubDomainName({
+      baseSubdomainName,
       branchName
     })
 
     // Assert
-    expect(subDomain).toEqual(branchName)
+    expect(subDomain).toEqual(`${baseSubdomainName}-${branchName}`)
   })
 
   it('should return empty string master branch', () => {
     // Arrange
+    const baseSubdomainName = 'nextjs-serverless-static-site'
     const branchName = ''
 
     // Act
     const subDomain = getSubDomainName({
+      baseSubdomainName,
       branchName
     })
 
     // Assert
-    expect(subDomain).toEqual(branchName)
+    expect(subDomain).toEqual(baseSubdomainName)
   })
 })
 
