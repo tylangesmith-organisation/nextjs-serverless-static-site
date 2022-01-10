@@ -16,7 +16,7 @@ const url = getUrl({ domainName, subDomainName })
 const app = new App()
 
 new Stack(app, {
-  stackName: `tylangesmith-${branchName}`,
+  stackName: `nextjs-serverless-static-site-${branchName}`,
   url,
   domainName,
   subDomainName,

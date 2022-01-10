@@ -13,7 +13,7 @@ export interface Props extends StackProps {
 
 export default class Website extends Stack {
   constructor (scope: App, props: Props) {
-    super(scope, 'tylangesmith', props)
+    super(scope, 'nextjs-serverless-static-site', props)
     const { url, domainName, subDomainName } = props
 
     const staticWebsiteBucket = createStaticWebsiteBucket({
