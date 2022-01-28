@@ -1,25 +1,24 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import styles from '../styles/Style.module.css'
 
 const Other: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Static Site Example</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main className="container px-2 h-screen flex flex-col justify-center items-center prose mx-auto">
+        <h1 className="text-5xl font-black">
           Other Page
         </h1>
-        <p className={styles.paragraph}>
-          This is an example Next.js static site for the blog <br /><a href="https://tylangesmith.com/blog/building-a-nextjs-serverless-static-site-using-aws-cdk">Building a Next.js Serverless Static Site using AWS CDK</a>
+        <p className="text-2xl text-center">
+          This is an example Next.js static site for the blog<br /><a className="text-blue-600" href="https://tylangesmith.com/blog/building-a-nextjs-serverless-static-site-using-aws-cdk">Building a Next.js Serverless Static Site using AWS CDK</a>
         </p>
         <Link href="/">
-          <a className={styles.card}>
+          <a className="text-2xl">
             Home Page
           </a>
         </Link>
