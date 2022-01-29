@@ -3,21 +3,21 @@ export const isMasterBranch = (branchName: string): boolean => {
 }
 
 export interface GetSubDomainNameProps {
-  baseSubdomainName: string;
+  subDomainName: string;
   branchName: string;
 }
 
-export const getSubDomainName = (props: GetSubDomainNameProps): string => {
-  const { baseSubdomainName, branchName } = props
-  return isMasterBranch(branchName) ? baseSubdomainName : `${baseSubdomainName}-${branchName}`
+export const getBranchedSubDomainName = (props: GetSubDomainNameProps): string => {
+  const { subDomainName, branchName } = props
+  return isMasterBranch(branchName) ? subDomainName : `${subDomainName}-${branchName}`
 }
 
 export interface GetUrlProps {
   domainName: string;
-  subDomainName: string;
+  branchedSubDomainName: string;
 }
 
 export const getUrl = (props: GetUrlProps): string => {
-  const { domainName, subDomainName } = props
-  return subDomainName === '' ? domainName : `${subDomainName}.${domainName}`
+  const { domainName, branchedSubDomainName } = props
+  return branchedSubDomainName === '' ? domainName : `${branchedSubDomainName}.${domainName}`
 }
