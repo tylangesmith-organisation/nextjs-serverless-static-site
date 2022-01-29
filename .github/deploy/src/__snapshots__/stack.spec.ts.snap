@@ -552,6 +552,17 @@ Object {
               },
               "QueryString": false,
             },
+            "FunctionAssociations": Array [
+              Object {
+                "EventType": "viewer-request",
+                "FunctionARN": Object {
+                  "Fn::GetAtt": Array [
+                    "mappingFunction116C420D",
+                    "FunctionARN",
+                  ],
+                },
+              },
+            ],
             "TargetOriginId": "origin1",
             "ViewerProtocolPolicy": "redirect-to-https",
           },
@@ -606,6 +617,30 @@ Object {
         },
       },
       "Type": "AWS::CloudFront::Distribution",
+    },
+    "mappingFunction116C420D": Object {
+      "Properties": Object {
+        "AutoPublish": true,
+        "FunctionCode": "function handler (event) {
+  const request = event.request
+  const uri = request.uri
+
+  if (uri.endsWith('/')) {
+    request.uri += 'index.html'
+  } else if (!uri.includes('.')) {
+    request.uri += '.html'
+  }
+
+  return request
+}
+",
+        "FunctionConfig": Object {
+          "Comment": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+          "Runtime": "cloudfront-js-1.0",
+        },
+        "Name": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+      },
+      "Type": "AWS::CloudFront::Function",
     },
     "staticWebsiteBucketAutoDeleteObjectsCustomResource655B1F89": Object {
       "DeletionPolicy": "Delete",
@@ -1380,6 +1415,17 @@ Object {
               },
               "QueryString": false,
             },
+            "FunctionAssociations": Array [
+              Object {
+                "EventType": "viewer-request",
+                "FunctionARN": Object {
+                  "Fn::GetAtt": Array [
+                    "mappingFunction116C420D",
+                    "FunctionARN",
+                  ],
+                },
+              },
+            ],
             "TargetOriginId": "origin1",
             "ViewerProtocolPolicy": "redirect-to-https",
           },
@@ -1434,6 +1480,30 @@ Object {
         },
       },
       "Type": "AWS::CloudFront::Distribution",
+    },
+    "mappingFunction116C420D": Object {
+      "Properties": Object {
+        "AutoPublish": true,
+        "FunctionCode": "function handler (event) {
+  const request = event.request
+  const uri = request.uri
+
+  if (uri.endsWith('/')) {
+    request.uri += 'index.html'
+  } else if (!uri.includes('.')) {
+    request.uri += '.html'
+  }
+
+  return request
+}
+",
+        "FunctionConfig": Object {
+          "Comment": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+          "Runtime": "cloudfront-js-1.0",
+        },
+        "Name": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+      },
+      "Type": "AWS::CloudFront::Function",
     },
     "staticWebsiteBucketAutoDeleteObjectsCustomResource655B1F89": Object {
       "DeletionPolicy": "Delete",

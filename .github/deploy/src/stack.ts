@@ -3,8 +3,7 @@ import { getBranchedSubDomainName, getUrl } from './helpers/helper'
 import { createStaticWebsiteBucket, createStaticWebsiteBucketDeployment } from './helpers/bucket'
 import { getHostedZone, createARecordForDistribution } from './helpers/route53'
 import { createCertificate } from './helpers/certificate'
-// import { createEdgeLambdaFunction } from './helpers/lambda'
-import { createDistribution } from './helpers/cloudfront'
+import { createFunction, createDistribution } from './helpers/cloudfront'
 
 export interface Props extends StackProps {
   branchName: string;
@@ -59,17 +58,22 @@ export default class StaticWebsiteStack extends Stack {
       url
     })
 
-    // const edgeLambdaFunction = createEdgeLambdaFunction({
-    //   scope: this,
-    //   handler: 'mapperFunction.handler',
-    //   name: 'mapper'
-    // })
+    // Now let's create our mapping function. This runs on CloudFront at the edge
+    // on a particular set of paths
+    // This allows us to ensure pages are mapped to their correct html files when
+    // the Next.js library isn't loaded on the client
+    const functionAssociation = createFunction({
+      scope: this,
+      name: 'mapping',
+      filePath: './src/functions/mapperFunction.js'
+    })
 
     const distribution = createDistribution({
       scope: this,
       staticWebsiteBucket,
       certificate,
-      url
+      url,
+      functionAssociation
     })
 
     createARecordForDistribution({
