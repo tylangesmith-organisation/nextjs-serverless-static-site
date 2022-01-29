@@ -1,6 +1,6 @@
 import { Stack } from '@aws-cdk/core'
 import { IBucket } from '@aws-cdk/aws-s3'
-import { CloudFrontWebDistribution, OriginProtocolPolicy, IFunction, Function, FunctionCode, FunctionEventType } from '@aws-cdk/aws-cloudfront'
+import { CloudFrontWebDistribution, IFunction, Function, FunctionCode, FunctionEventType } from '@aws-cdk/aws-cloudfront'
 import { ICertificate } from '@aws-cdk/aws-certificatemanager'
 
 export interface CreateFunctionProps {
@@ -33,10 +33,13 @@ export const createDistribution = (props: CreateDistributionProps): CloudFrontWe
   return new CloudFrontWebDistribution(scope, 'distribution', {
     originConfigs: [
       {
-        customOriginSource: {
-          domainName: staticWebsiteBucket.bucketWebsiteDomainName,
-          originProtocolPolicy: OriginProtocolPolicy.HTTP_ONLY
+        s3OriginSource: {
+          s3BucketSource: staticWebsiteBucket
         },
+        // customOriginSource: {
+        //   domainName: staticWebsiteBucket.bucketWebsiteDomainName,
+        //   originProtocolPolicy: OriginProtocolPolicy.HTTP_ONLY
+        // },
         behaviors: [
           {
             isDefaultBehavior: true,
@@ -51,6 +54,7 @@ export const createDistribution = (props: CreateDistributionProps): CloudFrontWe
         ]
       }
     ],
+
     viewerCertificate: {
       aliases: [url],
       props: {

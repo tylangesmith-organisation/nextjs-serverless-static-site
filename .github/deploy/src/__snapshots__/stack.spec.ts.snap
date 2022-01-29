@@ -574,33 +574,14 @@ Object {
             Object {
               "ConnectionAttempts": 3,
               "ConnectionTimeout": 10,
-              "CustomOriginConfig": Object {
-                "HTTPPort": 80,
-                "HTTPSPort": 443,
-                "OriginKeepaliveTimeout": 5,
-                "OriginProtocolPolicy": "http-only",
-                "OriginReadTimeout": 30,
-                "OriginSSLProtocols": Array [
-                  "TLSv1.2",
-                ],
-              },
               "DomainName": Object {
-                "Fn::Select": Array [
-                  2,
-                  Object {
-                    "Fn::Split": Array [
-                      "/",
-                      Object {
-                        "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
-                          "WebsiteURL",
-                        ],
-                      },
-                    ],
-                  },
+                "Fn::GetAtt": Array [
+                  "staticWebsiteBucketF3428350",
+                  "RegionalDomainName",
                 ],
               },
               "Id": "origin1",
+              "S3OriginConfig": Object {},
             },
           ],
           "PriceClass": "PriceClass_100",
@@ -1437,33 +1418,14 @@ Object {
             Object {
               "ConnectionAttempts": 3,
               "ConnectionTimeout": 10,
-              "CustomOriginConfig": Object {
-                "HTTPPort": 80,
-                "HTTPSPort": 443,
-                "OriginKeepaliveTimeout": 5,
-                "OriginProtocolPolicy": "http-only",
-                "OriginReadTimeout": 30,
-                "OriginSSLProtocols": Array [
-                  "TLSv1.2",
-                ],
-              },
               "DomainName": Object {
-                "Fn::Select": Array [
-                  2,
-                  Object {
-                    "Fn::Split": Array [
-                      "/",
-                      Object {
-                        "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
-                          "WebsiteURL",
-                        ],
-                      },
-                    ],
-                  },
+                "Fn::GetAtt": Array [
+                  "staticWebsiteBucketF3428350",
+                  "RegionalDomainName",
                 ],
               },
               "Id": "origin1",
+              "S3OriginConfig": Object {},
             },
           ],
           "PriceClass": "PriceClass_100",

@@ -1,6 +1,7 @@
+/* eslint-disable */
 function handler (event) {
-  const request = event.request
-  const uri = request.uri
+  var request = event.request
+  var uri = request.uri
 
   if (uri.endsWith('/')) {
     request.uri += 'index.html'

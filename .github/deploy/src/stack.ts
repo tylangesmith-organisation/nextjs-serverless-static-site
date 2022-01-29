@@ -59,7 +59,7 @@ export default class StaticWebsiteStack extends Stack {
     })
 
     // Now let's create our mapping function. This runs on CloudFront at the edge
-    // on a particular set of paths
+    // on a defined path
     // This allows us to ensure pages are mapped to their correct html files when
     // the Next.js library isn't loaded on the client
     const functionAssociation = createFunction({
