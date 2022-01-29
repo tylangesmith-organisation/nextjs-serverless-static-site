@@ -8,12 +8,12 @@ export interface CreateStaticWebsiteBucketProps {
   bucketName: string;
 }
 
-export const createStaticWebsiteBucket = (props: CreateStaticWebsiteBucketProps): Bucket => {
+export const createStaticWebsiteBucket = (props: CreateStaticWebsiteBucketProps): IBucket => {
   const { scope, bucketName } = props
 
   return new Bucket(scope, 'staticWebsiteBucket', {
     bucketName,
-    publicReadAccess: true,
+    publicReadAccess: false,
     websiteIndexDocument: 'index.html',
     websiteErrorDocument: '404.html',
     autoDeleteObjects: true,

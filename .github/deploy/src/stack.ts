@@ -3,7 +3,7 @@ import { getBranchedSubDomainName, getUrl } from './helpers/helper'
 import { createStaticWebsiteBucket, createStaticWebsiteBucketDeployment } from './helpers/bucket'
 import { getHostedZone, createARecordForDistribution } from './helpers/route53'
 import { createCertificate } from './helpers/certificate'
-import { createFunction, createDistribution } from './helpers/cloudfront'
+import { createFunction, createOriginAccessIdentity, createDistribution } from './helpers/cloudfront'
 
 export interface Props extends StackProps {
   branchName: string;
@@ -68,13 +68,24 @@ export default class StaticWebsiteStack extends Stack {
       filePath: './src/functions/mapperFunction.js'
     })
 
+    // Create an access identity to allow our distribution to access our S3 bucket
+    const originAccessIdentity = createOriginAccessIdentity({ scope: this })
+
+    // With those few components now created we can now create our CloudFront
+    // distribution
+    // This allows for our static website content to be propogated across a CDN
+    // geographically closer to our users
     const distribution = createDistribution({
       scope: this,
       staticWebsiteBucket,
       certificate,
       url,
-      functionAssociation
+      functionAssociation,
+      originAccessIdentity
     })
+
+    // Allow our access identity to read our S3 bucket content
+    staticWebsiteBucket.grantRead(originAccessIdentity)
 
     createARecordForDistribution({
       scope: this,
