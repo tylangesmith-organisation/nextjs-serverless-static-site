@@ -16,6 +16,7 @@ export const createStaticWebsiteBucket = (props: CreateStaticWebsiteBucketProps)
     publicReadAccess: true,
     websiteIndexDocument: 'index.html',
     websiteErrorDocument: '404.html',
+    autoDeleteObjects: true,
     removalPolicy: RemovalPolicy.DESTROY
   })
 }

@@ -19,16 +19,16 @@ export const getHostedZone = (props: GetHostedZoneProps): IHostedZone => {
 export interface CreateARecordForDistributionProps {
   scope: Stack;
   hostedZone: IHostedZone;
-  subDomainName: string;
+  branchedSubDomainName: string;
   distribution: IDistribution;
 }
 
 export const createARecordForDistribution = (props: CreateARecordForDistributionProps): ARecord => {
-  const { scope, hostedZone, subDomainName, distribution } = props
+  const { scope, hostedZone, branchedSubDomainName, distribution } = props
 
   return new ARecord(scope, 'aRecord', {
     target: RecordTarget.fromAlias(new CloudFrontTarget(distribution)),
     zone: hostedZone,
-    recordName: subDomainName
+    recordName: branchedSubDomainName
   })
 }

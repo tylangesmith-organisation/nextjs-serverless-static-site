@@ -1,19 +1,17 @@
 import { Stack } from '@aws-cdk/core'
 import { IBucket } from '@aws-cdk/aws-s3'
-import { CloudFrontWebDistribution, OriginProtocolPolicy, LambdaEdgeEventType } from '@aws-cdk/aws-cloudfront'
+import { CloudFrontWebDistribution, OriginProtocolPolicy } from '@aws-cdk/aws-cloudfront'
 import { ICertificate } from '@aws-cdk/aws-certificatemanager'
-import { IVersion } from '@aws-cdk/aws-lambda'
 
 export interface CreateDistributionProps {
   scope: Stack;
   staticWebsiteBucket: IBucket;
   certificate: ICertificate;
   url: string;
-  edgeLambdaFunction: IVersion
 }
 
 export const createDistribution = (props: CreateDistributionProps): CloudFrontWebDistribution => {
-  const { scope, staticWebsiteBucket, certificate, url, edgeLambdaFunction } = props
+  const { scope, staticWebsiteBucket, certificate, url } = props
 
   return new CloudFrontWebDistribution(scope, 'distribution', {
     originConfigs: [
@@ -23,18 +21,18 @@ export const createDistribution = (props: CreateDistributionProps): CloudFrontWe
           originProtocolPolicy: OriginProtocolPolicy.HTTP_ONLY
         },
         behaviors: [
-          {
-            isDefaultBehavior: true,
-            lambdaFunctionAssociations: [
-              {
-                lambdaFunction: edgeLambdaFunction,
-                eventType: LambdaEdgeEventType.ORIGIN_REQUEST
-              }
-            ]
-          },
-          {
-            pathPattern: '/_next/*'
-          }
+          // {
+          //   isDefaultBehavior: true,
+          //   functionAssociations: [
+          //     {
+          //       function,
+          //       eventType: LambdaEdgeEventType.ORIGIN_REQUEST
+          //     }
+          //   ]
+          // },
+          // {
+          //   pathPattern: '/_next/*'
+          // }
         ]
       }
     ],

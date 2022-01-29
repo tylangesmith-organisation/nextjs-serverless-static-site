@@ -1,4 +1,4 @@
-import { getBranchedSubDomainName, getUrl, isMasterBranch } from './helper'
+import { getBranchedSubDomainName, getUrl, isMasterBranch, getGithubRepositoryName, getStackName } from './helper'
 
 describe('getSubDomainName', () => {
   it('should return base subdomain + branch name for non master branch', () => {
@@ -47,21 +47,6 @@ describe('getUrl', () => {
     // Assert
     expect(url).toEqual(`${subDomainName}.${domainName}`)
   })
-
-  it('should return correct url for domainName and empty subDomainName', () => {
-    // Arrange
-    const domainName = 'tylangesmith.com'
-    const subDomainName = ''
-
-    // Act
-    const url = getUrl({
-      domainName,
-      branchedSubDomainName: subDomainName
-    })
-
-    // Assert
-    expect(url).toEqual(`${domainName}`)
-  })
 })
 
 describe('isMasterBranch', () => {
@@ -85,5 +70,46 @@ describe('isMasterBranch', () => {
 
     // Assert
     expect(isMaster).toBeFalsy()
+  })
+})
+
+describe('getGithubRepositoryName', () => {
+  it('should return github repository name', () => {
+    // Arrange
+    const githubRepository = 'tylangesmith-organisation/nextjs-serverless-static-site'
+
+    // Act
+    const githubRepositoryName = getGithubRepositoryName(githubRepository)
+
+    // Assert
+    expect(githubRepositoryName).toEqual('nextjs-serverless-static-site')
+  })
+})
+
+describe('getStackName', () => {
+  it('should return stack name for non master branch', () => {
+    // Arrange
+    const githubRepositoryName = 'nextjs-serverless-static-site'
+    const githubRepository = `tylangesmith-organisation/${githubRepositoryName}`
+    const branchName = 'feature-xyz'
+
+    // Act
+    const stackName = getStackName({ githubRepository, branchName })
+
+    // Assert
+    expect(stackName).toEqual(`${githubRepositoryName}/${branchName}`)
+  })
+
+  it('should return stack name for master branch', () => {
+    // Arrange
+    const githubRepositoryName = 'nextjs-serverless-static-site'
+    const githubRepository = `tylangesmith-organisation/${githubRepositoryName}`
+    const branchName = 'master'
+
+    // Act
+    const stackName = getStackName({ githubRepository, branchName })
+
+    // Assert
+    expect(stackName).toEqual(`${githubRepositoryName}/${branchName}`)
   })
 })
