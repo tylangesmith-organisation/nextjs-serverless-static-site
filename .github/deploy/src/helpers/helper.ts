@@ -32,7 +32,7 @@ export const getGithubRepositoryName = (githubRepository: string): string => {
     E.g. tylangesmith-organisation/nextjs-serverless-static-site
           ==> nextjs-serverless-static-site
   */
-  return githubRepository.split('/')[0]
+  return githubRepository.split('/')[1]
 }
 
 export interface GetStackNameProps {

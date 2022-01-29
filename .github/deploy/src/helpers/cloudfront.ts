@@ -21,6 +21,9 @@ export const createDistribution = (props: CreateDistributionProps): CloudFrontWe
           originProtocolPolicy: OriginProtocolPolicy.HTTP_ONLY
         },
         behaviors: [
+          {
+            isDefaultBehavior: true
+          }
           // {
           //   isDefaultBehavior: true,
           //   functionAssociations: [

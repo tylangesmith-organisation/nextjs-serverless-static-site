@@ -97,7 +97,7 @@ describe('getStackName', () => {
     const stackName = getStackName({ githubRepository, branchName })
 
     // Assert
-    expect(stackName).toEqual(`${githubRepositoryName}/${branchName}`)
+    expect(stackName).toEqual(`${githubRepositoryName}-${branchName}`)
   })
 
   it('should return stack name for master branch', () => {
@@ -110,6 +110,6 @@ describe('getStackName', () => {
     const stackName = getStackName({ githubRepository, branchName })
 
     // Assert
-    expect(stackName).toEqual(`${githubRepositoryName}/${branchName}`)
+    expect(stackName).toEqual(`${githubRepositoryName}-${branchName}`)
   })
 })
