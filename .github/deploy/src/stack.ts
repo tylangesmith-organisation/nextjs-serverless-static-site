@@ -87,6 +87,8 @@ export default class StaticWebsiteStack extends Stack {
     // Allow our access identity to read our S3 bucket content
     staticWebsiteBucket.grantRead(originAccessIdentity)
 
+    // Create an A record entry in Route53 that points to our CloudFront distribution
+    // E.g. nextjs-serverless-static-site.tylangesmith.com ==> xyz.cloudfront.net
     createARecordForDistribution({
       scope: this,
       hostedZone,
@@ -94,10 +96,12 @@ export default class StaticWebsiteStack extends Stack {
       distribution
     })
 
+    // Finally let's deploy our static content to our S3 bucket
     createStaticWebsiteBucketDeployment({
       scope: this,
       staticWebsiteBucket,
-      distribution
+      distribution,
+      filePath: './out'
     })
   }
 }

@@ -25,14 +25,15 @@ export interface CreateStaticWebsiteBucketDeploymentProps {
   scope: Stack;
   staticWebsiteBucket: IBucket;
   distribution: IDistribution;
+  filePath: string;
 }
 
 export const createStaticWebsiteBucketDeployment = (props: CreateStaticWebsiteBucketDeploymentProps): BucketDeployment => {
-  const { scope, staticWebsiteBucket, distribution } = props
+  const { scope, staticWebsiteBucket, distribution, filePath } = props
 
   return new BucketDeployment(scope, 'staticWebsiteBucketDeployment', {
     destinationBucket: staticWebsiteBucket,
-    sources: [Source.asset('./out')],
+    sources: [Source.asset(filePath)],
     distribution
   })
 }
