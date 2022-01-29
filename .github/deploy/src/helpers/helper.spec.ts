@@ -1,34 +1,34 @@
-import { getSubDomainName, getUrl, isMasterBranch } from './helper'
+import { getBranchedSubDomainName, getUrl, isMasterBranch } from './helper'
 
 describe('getSubDomainName', () => {
   it('should return base subdomain + branch name for non master branch', () => {
     // Arrange
-    const baseSubdomainName = 'nextjs-serverless-static-site'
+    const subDomainName = 'nextjs-serverless-static-site'
     const branchName = 'formatting'
 
     // Act
-    const subDomain = getSubDomainName({
-      baseSubdomainName,
+    const branchedSubDomain = getBranchedSubDomainName({
+      subDomainName,
       branchName
     })
 
     // Assert
-    expect(subDomain).toEqual(`${baseSubdomainName}-${branchName}`)
+    expect(branchedSubDomain).toEqual(`${subDomainName}-${branchName}`)
   })
 
   it('should return base subdomain for master branch', () => {
     // Arrange
-    const baseSubdomainName = 'nextjs-serverless-static-site'
+    const subDomainName = 'nextjs-serverless-static-site'
     const branchName = 'master'
 
     // Act
-    const subDomain = getSubDomainName({
-      baseSubdomainName,
+    const branchedSubDomain = getBranchedSubDomainName({
+      subDomainName,
       branchName
     })
 
     // Assert
-    expect(subDomain).toEqual(baseSubdomainName)
+    expect(branchedSubDomain).toEqual(subDomainName)
   })
 })
 
@@ -41,7 +41,7 @@ describe('getUrl', () => {
     // Act
     const url = getUrl({
       domainName,
-      subDomainName
+      branchedSubDomainName: subDomainName
     })
 
     // Assert
@@ -56,7 +56,7 @@ describe('getUrl', () => {
     // Act
     const url = getUrl({
       domainName,
-      subDomainName
+      branchedSubDomainName: subDomainName
     })
 
     // Assert
