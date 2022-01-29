@@ -14,6 +14,8 @@ const subDomainName = process.env.SUBDOMAIN_NAME
 const branchedSubDomainName = getBranchedSubDomainName({ subDomainName, branchName })
 const url = getUrl({ domainName, branchedSubDomainName })
 
+console.log(`GITHUB_REPOSITORY: ${process.env.GITHUB_REPOSITORY}`)
+
 const app = new App()
 
 new Stack(app, {
