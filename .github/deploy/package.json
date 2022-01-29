@@ -1,0 +1,50 @@
+{
+  "name": "nextjs-serverless-static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:update": "jest --updateSnapshot --verbose",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylangesmith-organisation/tylangesmith.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylangesmith-organisation/tylangesmith/issues"
+  },
+  "homepage": "https://github.com/tylangesmith-organisation/tylangesmith#readme",
+  "dependencies": {
+    "@aws-cdk/assert": "^1.137.0",
+    "@aws-cdk/aws-certificatemanager": "^1.137.0",
+    "@aws-cdk/aws-cloudfront": "^1.137.0",
+    "@aws-cdk/aws-iam": "^1.137.0",
+    "@aws-cdk/aws-lambda": "^1.137.0",
+    "@aws-cdk/aws-route53": "^1.137.0",
+    "@aws-cdk/aws-route53-targets": "^1.137.0",
+    "@aws-cdk/aws-s3": "^1.137.0",
+    "@aws-cdk/aws-s3-deployment": "^1.137.0",
+    "@aws-cdk/core": "^1.137.0",
+    "@types/node": "^15.3.0",
+    "aws-cdk": "^2.3.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6"
+  }
+}

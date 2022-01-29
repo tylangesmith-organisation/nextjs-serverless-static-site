@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 
-const Home: NextPage = () => {
+const Other: NextPage = () => {
   return (
     <div>
       <Head>
@@ -12,14 +12,14 @@ const Home: NextPage = () => {
 
       <main className="container px-2 h-screen flex flex-col justify-center items-center prose mx-auto">
         <h1 className="text-5xl font-black">
-          Home Page
+          Other Page
         </h1>
         <p className="text-2xl text-center">
           This is an example Next.js static site for the blog<br /><a className="text-blue-600" href="https://tylangesmith.com/blog/building-a-nextjs-serverless-static-site-using-aws-cdk">Building a Next.js Serverless Static Site using AWS CDK</a>
         </p>
-        <Link href="/other">
+        <Link href="/">
           <a className="text-2xl">
-            Other Page
+            Home Page
           </a>
         </Link>
       </main>
@@ -27,4 +27,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Other
