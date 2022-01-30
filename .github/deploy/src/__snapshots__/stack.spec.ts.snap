@@ -557,7 +557,7 @@ Object {
                 "EventType": "viewer-request",
                 "FunctionARN": Object {
                   "Fn::GetAtt": Array [
-                    "mappingFunction116C420D",
+                    "mappingmasterFunction0296FEFF",
                     "FunctionARN",
                   ],
                 },
@@ -611,7 +611,7 @@ Object {
       },
       "Type": "AWS::CloudFront::Distribution",
     },
-    "mappingFunction116C420D": Object {
+    "mappingmasterFunction0296FEFF": Object {
       "Properties": Object {
         "AutoPublish": true,
         "FunctionCode": "/* eslint-disable */
@@ -629,10 +629,10 @@ function handler (event) {
 }
 ",
         "FunctionConfig": Object {
-          "Comment": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+          "Comment": "us-east-1staticWebsitemappingmasterFunctionD0B8467C",
           "Runtime": "cloudfront-js-1.0",
         },
-        "Name": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+        "Name": "us-east-1staticWebsitemappingmasterFunctionD0B8467C",
       },
       "Type": "AWS::CloudFront::Function",
     },
@@ -1465,7 +1465,7 @@ Object {
                 "EventType": "viewer-request",
                 "FunctionARN": Object {
                   "Fn::GetAtt": Array [
-                    "mappingFunction116C420D",
+                    "mappingmyfeatureFunction6C798B10",
                     "FunctionARN",
                   ],
                 },
@@ -1519,7 +1519,7 @@ Object {
       },
       "Type": "AWS::CloudFront::Distribution",
     },
-    "mappingFunction116C420D": Object {
+    "mappingmyfeatureFunction6C798B10": Object {
       "Properties": Object {
         "AutoPublish": true,
         "FunctionCode": "/* eslint-disable */
@@ -1537,10 +1537,10 @@ function handler (event) {
 }
 ",
         "FunctionConfig": Object {
-          "Comment": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+          "Comment": "us-east-1staticWebsitemappingmyfeatureFunction9560AFA1",
           "Runtime": "cloudfront-js-1.0",
         },
-        "Name": "us-east-1staticWebsitemappingFunctionCC27DD5C",
+        "Name": "us-east-1staticWebsitemappingmyfeatureFunction9560AFA1",
       },
       "Type": "AWS::CloudFront::Function",
     },
