@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Deploy](https://github.com/tylangesmith-organisation/nextjs-serverless-static-site/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/tylangesmith-organisation/nextjs-serverless-static-site/actions/workflows/deploy.yml)
 
-## Getting Started
+## Next.js Serverless Static Site
 
-First, run the development server:
+This is an example project to demonstate how to deploy a Next.js static site using AWS CDK.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Checkout the blog post for a more indepth explaination: [Building a Next.js Serverless Static Site using AWS CDK](https://tylangesmith.com/blog/building-a-nextjs-serverless-static-site-using-aws-cdk).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploying the Project
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+All the CI / CD and AWS CDK infrastructure code can be found under the [.github](.github) folder. This requires you to have an AWS account already setup with a few essentials.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Some of these essentials include:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- IAM user you can use for deployment
+- AWS CDK already bootstrapped
+- Your domain setup in Route53
 
-## Learn More
+Checkout my [tylangesmith-organisation/iam-entities](https://github.com/tylangesmith-organisation/iam-entities) and [tylangesmith-organisation/cdk-bootstrap](https://github.com/tylangesmith-organisation/cdk-bootstrap) repos that might help with this.
 
-To learn more about Next.js, take a look at the following resources:
+After that's complete you'll need to ensure the environment variables in the [deploy.yml](.github/workflows/deploy.yml) file are set. These are as follows
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Variable              | Type                 | Description                    |
+|-----------------------|----------------------|--------------------------------|
+| ACCOUNT_ID            | GitHub Secret        | The AWS Account ID             |
+| AWS_ACCESS_KEY_ID     | GitHub Secret        | The IAM user Access Key ID     |
+| AWS_SECRET_ACCESS_KEY | GitHub Secret        | The IAM user Secret Access Key |
+| AWS_DEFAULT_REGION    | Environment Variable | The default AWS region to use  |
+| DOMAIN_NAME           | Environment Variable | Your domain name               |
+| SUBDOMAIN_NAME        | Environment Variable | The subdomain to use           |
