@@ -64,7 +64,7 @@ export default class StaticWebsiteStack extends Stack {
     // the Next.js library isn't loaded on the client
     const functionAssociation = createFunction({
       scope: this,
-      name: `mapping-${branchedSubDomainName}`,
+      functionName: `mapping-${url}`,
       filePath: './src/functions/mapperFunction.js'
     })
 

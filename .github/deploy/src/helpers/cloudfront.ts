@@ -14,14 +14,15 @@ import { ICertificate } from '@aws-cdk/aws-certificatemanager'
 
 export interface CreateFunctionProps {
   scope: Stack;
-  name: string;
+  functionName: string;
   filePath: string;
 }
 
 export const createFunction = (props: CreateFunctionProps): IFunction => {
-  const { scope, name, filePath } = props
+  const { scope, functionName, filePath } = props
 
-  return new Function(scope, `${name}Function`, {
+  return new Function(scope, 'mappingFunction', {
+    functionName,
     code: FunctionCode.fromFile({
       filePath
     })
