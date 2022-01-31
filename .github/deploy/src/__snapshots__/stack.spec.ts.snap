@@ -629,10 +629,10 @@ function handler (event) {
 }
 ",
         "FunctionConfig": Object {
-          "Comment": "mapping-nextjs-serverless-static-site.tylangesmith.com",
+          "Comment": "mapping-staticWebsite",
           "Runtime": "cloudfront-js-1.0",
         },
-        "Name": "mapping-nextjs-serverless-static-site.tylangesmith.com",
+        "Name": "mapping-staticWebsite",
       },
       "Type": "AWS::CloudFront::Function",
     },
@@ -1537,10 +1537,10 @@ function handler (event) {
 }
 ",
         "FunctionConfig": Object {
-          "Comment": "mapping-nextjs-serverless-static-site-my-feature.tylangesmith.com",
+          "Comment": "mapping-staticWebsite",
           "Runtime": "cloudfront-js-1.0",
         },
-        "Name": "mapping-nextjs-serverless-static-site-my-feature.tylangesmith.com",
+        "Name": "mapping-staticWebsite",
       },
       "Type": "AWS::CloudFront::Function",
     },
