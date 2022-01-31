@@ -557,7 +557,7 @@ Object {
                 "EventType": "viewer-request",
                 "FunctionARN": Object {
                   "Fn::GetAtt": Array [
-                    "mappingmasterFunction0296FEFF",
+                    "mappingFunction116C420D",
                     "FunctionARN",
                   ],
                 },
@@ -611,7 +611,7 @@ Object {
       },
       "Type": "AWS::CloudFront::Distribution",
     },
-    "mappingmasterFunction0296FEFF": Object {
+    "mappingFunction116C420D": Object {
       "Properties": Object {
         "AutoPublish": true,
         "FunctionCode": "/* eslint-disable */
@@ -629,10 +629,10 @@ function handler (event) {
 }
 ",
         "FunctionConfig": Object {
-          "Comment": "us-east-1staticWebsitemappingmasterFunctionD0B8467C",
+          "Comment": "mapping-staticWebsite",
           "Runtime": "cloudfront-js-1.0",
         },
-        "Name": "us-east-1staticWebsitemappingmasterFunctionD0B8467C",
+        "Name": "mapping-staticWebsite",
       },
       "Type": "AWS::CloudFront::Function",
     },
@@ -1465,7 +1465,7 @@ Object {
                 "EventType": "viewer-request",
                 "FunctionARN": Object {
                   "Fn::GetAtt": Array [
-                    "mappingmyfeatureFunction6C798B10",
+                    "mappingFunction116C420D",
                     "FunctionARN",
                   ],
                 },
@@ -1519,7 +1519,7 @@ Object {
       },
       "Type": "AWS::CloudFront::Distribution",
     },
-    "mappingmyfeatureFunction6C798B10": Object {
+    "mappingFunction116C420D": Object {
       "Properties": Object {
         "AutoPublish": true,
         "FunctionCode": "/* eslint-disable */
@@ -1537,10 +1537,10 @@ function handler (event) {
 }
 ",
         "FunctionConfig": Object {
-          "Comment": "us-east-1staticWebsitemappingmyfeatureFunction9560AFA1",
+          "Comment": "mapping-staticWebsite",
           "Runtime": "cloudfront-js-1.0",
         },
-        "Name": "us-east-1staticWebsitemappingmyfeatureFunction9560AFA1",
+        "Name": "mapping-staticWebsite",
       },
       "Type": "AWS::CloudFront::Function",
     },
