@@ -13,7 +13,6 @@ export const createStaticWebsiteBucket = (props: CreateStaticWebsiteBucketProps)
 
   return new Bucket(scope, 'staticWebsiteBucket', {
     bucketName,
-    publicReadAccess: false,
     websiteIndexDocument: 'index.html',
     websiteErrorDocument: '404.html',
     autoDeleteObjects: true,
