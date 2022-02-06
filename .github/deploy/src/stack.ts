@@ -71,6 +71,9 @@ export default class StaticWebsiteStack extends Stack {
     // Create an access identity to allow our distribution to access our S3 bucket
     const originAccessIdentity = createOriginAccessIdentity({ scope: this })
 
+    // Allow our access identity to read our S3 bucket content
+    staticWebsiteBucket.grantRead(originAccessIdentity)
+
     // With those few components now created we can now create our CloudFront
     // distribution
     // This allows for our static website content to be propogated across a CDN
@@ -83,9 +86,6 @@ export default class StaticWebsiteStack extends Stack {
       functionAssociation,
       originAccessIdentity
     })
-
-    // Allow our access identity to read our S3 bucket content
-    staticWebsiteBucket.grantRead(originAccessIdentity)
 
     // Create an A record entry in Route53 that points to our CloudFront distribution
     // E.g. nextjs-serverless-static-site.tylangesmith.com ==> xyz.cloudfront.net
