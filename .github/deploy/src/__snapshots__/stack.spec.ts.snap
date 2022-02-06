@@ -360,7 +360,7 @@ Object {
         "AliasTarget": Object {
           "DNSName": Object {
             "Fn::GetAtt": Array [
-              "distributionCFDistribution99A57736",
+              "distribution114A0A2A",
               "DomainName",
             ],
           },
@@ -531,73 +531,68 @@ Object {
       "Type": "AWS::CloudFormation::CustomResource",
       "UpdateReplacePolicy": "Delete",
     },
-    "distributionCFDistribution99A57736": Object {
+    "distribution114A0A2A": Object {
       "Properties": Object {
         "DistributionConfig": Object {
           "Aliases": Array [
             "nextjs-serverless-static-site.tylangesmith.com",
           ],
-          "DefaultCacheBehavior": Object {
-            "AllowedMethods": Array [
-              "GET",
-              "HEAD",
-            ],
-            "CachedMethods": Array [
-              "GET",
-              "HEAD",
-            ],
-            "Compress": true,
-            "ForwardedValues": Object {
-              "Cookies": Object {
-                "Forward": "none",
-              },
-              "QueryString": false,
-            },
-            "FunctionAssociations": Array [
-              Object {
-                "EventType": "viewer-request",
-                "FunctionARN": Object {
-                  "Fn::GetAtt": Array [
-                    "mappingFunction116C420D",
-                    "FunctionARN",
-                  ],
+          "CacheBehaviors": Array [
+            Object {
+              "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+              "Compress": true,
+              "FunctionAssociations": Array [
+                Object {
+                  "EventType": "viewer-request",
+                  "FunctionARN": Object {
+                    "Fn::GetAtt": Array [
+                      "mappingFunction116C420D",
+                      "FunctionARN",
+                    ],
+                  },
                 },
-              },
-            ],
-            "TargetOriginId": "origin1",
-            "ViewerProtocolPolicy": "redirect-to-https",
+              ],
+              "PathPattern": "/_next/*",
+              "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
+              "ViewerProtocolPolicy": "allow-all",
+            },
+          ],
+          "DefaultCacheBehavior": Object {
+            "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+            "Compress": true,
+            "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
+            "ViewerProtocolPolicy": "allow-all",
           },
-          "DefaultRootObject": "index.html",
           "Enabled": true,
           "HttpVersion": "http2",
           "IPV6Enabled": true,
           "Origins": Array [
             Object {
-              "ConnectionAttempts": 3,
-              "ConnectionTimeout": 10,
-              "DomainName": Object {
-                "Fn::GetAtt": Array [
-                  "staticWebsiteBucketF3428350",
-                  "RegionalDomainName",
+              "CustomOriginConfig": Object {
+                "OriginProtocolPolicy": "http-only",
+                "OriginSSLProtocols": Array [
+                  "TLSv1.2",
                 ],
               },
-              "Id": "origin1",
-              "S3OriginConfig": Object {
-                "OriginAccessIdentity": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "origin-access-identity/cloudfront/",
+              "DomainName": Object {
+                "Fn::Select": Array [
+                  2,
+                  Object {
+                    "Fn::Split": Array [
+                      "/",
                       Object {
-                        "Ref": "originAccessIdentity402DAA30",
+                        "Fn::GetAtt": Array [
+                          "staticWebsiteBucketF3428350",
+                          "WebsiteURL",
+                        ],
                       },
                     ],
-                  ],
-                },
+                  },
+                ],
               },
+              "Id": "staticWebsitedistributionOrigin1D751FEF3",
             },
           ],
-          "PriceClass": "PriceClass_100",
           "ViewerCertificate": Object {
             "AcmCertificateArn": Object {
               "Fn::GetAtt": Array [
@@ -605,7 +600,7 @@ Object {
                 "Arn",
               ],
             },
-            "MinimumProtocolVersion": "TLSv1",
+            "MinimumProtocolVersion": "TLSv1.2_2019",
             "SslSupportMethod": "sni-only",
           },
         },
@@ -715,7 +710,7 @@ function handler (event) {
           "Ref": "staticWebsiteBucketF3428350",
         },
         "DistributionId": Object {
-          "Ref": "distributionCFDistribution99A57736",
+          "Ref": "distribution114A0A2A",
         },
         "Prune": true,
         "ServiceToken": Object {
@@ -872,32 +867,6 @@ function handler (event) {
                   ],
                 },
               ],
-            },
-            Object {
-              "Action": "s3:GetObject",
-              "Effect": "Allow",
-              "Principal": Object {
-                "CanonicalUser": Object {
-                  "Fn::GetAtt": Array [
-                    "originAccessIdentity402DAA30",
-                    "S3CanonicalUserId",
-                  ],
-                },
-              },
-              "Resource": Object {
-                "Fn::Join": Array [
-                  "",
-                  Array [
-                    Object {
-                      "Fn::GetAtt": Array [
-                        "staticWebsiteBucketF3428350",
-                        "Arn",
-                      ],
-                    },
-                    "/*",
-                  ],
-                ],
-              },
             },
           ],
           "Version": "2012-10-17",
@@ -1269,7 +1238,7 @@ Object {
         "AliasTarget": Object {
           "DNSName": Object {
             "Fn::GetAtt": Array [
-              "distributionCFDistribution99A57736",
+              "distribution114A0A2A",
               "DomainName",
             ],
           },
@@ -1440,73 +1409,68 @@ Object {
       "Type": "AWS::CloudFormation::CustomResource",
       "UpdateReplacePolicy": "Delete",
     },
-    "distributionCFDistribution99A57736": Object {
+    "distribution114A0A2A": Object {
       "Properties": Object {
         "DistributionConfig": Object {
           "Aliases": Array [
             "nextjs-serverless-static-site-my-feature.tylangesmith.com",
           ],
-          "DefaultCacheBehavior": Object {
-            "AllowedMethods": Array [
-              "GET",
-              "HEAD",
-            ],
-            "CachedMethods": Array [
-              "GET",
-              "HEAD",
-            ],
-            "Compress": true,
-            "ForwardedValues": Object {
-              "Cookies": Object {
-                "Forward": "none",
-              },
-              "QueryString": false,
-            },
-            "FunctionAssociations": Array [
-              Object {
-                "EventType": "viewer-request",
-                "FunctionARN": Object {
-                  "Fn::GetAtt": Array [
-                    "mappingFunction116C420D",
-                    "FunctionARN",
-                  ],
+          "CacheBehaviors": Array [
+            Object {
+              "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+              "Compress": true,
+              "FunctionAssociations": Array [
+                Object {
+                  "EventType": "viewer-request",
+                  "FunctionARN": Object {
+                    "Fn::GetAtt": Array [
+                      "mappingFunction116C420D",
+                      "FunctionARN",
+                    ],
+                  },
                 },
-              },
-            ],
-            "TargetOriginId": "origin1",
-            "ViewerProtocolPolicy": "redirect-to-https",
+              ],
+              "PathPattern": "/_next/*",
+              "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
+              "ViewerProtocolPolicy": "allow-all",
+            },
+          ],
+          "DefaultCacheBehavior": Object {
+            "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+            "Compress": true,
+            "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
+            "ViewerProtocolPolicy": "allow-all",
           },
-          "DefaultRootObject": "index.html",
           "Enabled": true,
           "HttpVersion": "http2",
           "IPV6Enabled": true,
           "Origins": Array [
             Object {
-              "ConnectionAttempts": 3,
-              "ConnectionTimeout": 10,
-              "DomainName": Object {
-                "Fn::GetAtt": Array [
-                  "staticWebsiteBucketF3428350",
-                  "RegionalDomainName",
+              "CustomOriginConfig": Object {
+                "OriginProtocolPolicy": "http-only",
+                "OriginSSLProtocols": Array [
+                  "TLSv1.2",
                 ],
               },
-              "Id": "origin1",
-              "S3OriginConfig": Object {
-                "OriginAccessIdentity": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "origin-access-identity/cloudfront/",
+              "DomainName": Object {
+                "Fn::Select": Array [
+                  2,
+                  Object {
+                    "Fn::Split": Array [
+                      "/",
                       Object {
-                        "Ref": "originAccessIdentity402DAA30",
+                        "Fn::GetAtt": Array [
+                          "staticWebsiteBucketF3428350",
+                          "WebsiteURL",
+                        ],
                       },
                     ],
-                  ],
-                },
+                  },
+                ],
               },
+              "Id": "staticWebsitedistributionOrigin1D751FEF3",
             },
           ],
-          "PriceClass": "PriceClass_100",
           "ViewerCertificate": Object {
             "AcmCertificateArn": Object {
               "Fn::GetAtt": Array [
@@ -1514,7 +1478,7 @@ Object {
                 "Arn",
               ],
             },
-            "MinimumProtocolVersion": "TLSv1",
+            "MinimumProtocolVersion": "TLSv1.2_2019",
             "SslSupportMethod": "sni-only",
           },
         },
@@ -1624,7 +1588,7 @@ function handler (event) {
           "Ref": "staticWebsiteBucketF3428350",
         },
         "DistributionId": Object {
-          "Ref": "distributionCFDistribution99A57736",
+          "Ref": "distribution114A0A2A",
         },
         "Prune": true,
         "ServiceToken": Object {
@@ -1781,32 +1745,6 @@ function handler (event) {
                   ],
                 },
               ],
-            },
-            Object {
-              "Action": "s3:GetObject",
-              "Effect": "Allow",
-              "Principal": Object {
-                "CanonicalUser": Object {
-                  "Fn::GetAtt": Array [
-                    "originAccessIdentity402DAA30",
-                    "S3CanonicalUserId",
-                  ],
-                },
-              },
-              "Resource": Object {
-                "Fn::Join": Array [
-                  "",
-                  Array [
-                    Object {
-                      "Fn::GetAtt": Array [
-                        "staticWebsiteBucketF3428350",
-                        "Arn",
-                      ],
-                    },
-                    "/*",
-                  ],
-                ],
-              },
             },
           ],
           "Version": "2012-10-17",
