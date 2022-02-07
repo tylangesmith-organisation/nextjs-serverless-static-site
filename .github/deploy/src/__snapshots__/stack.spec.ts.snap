@@ -755,6 +755,13 @@ Object {
           "Aliases": Array [
             "nextjs-serverless-static-site.tylangesmith.com",
           ],
+          "CustomErrorResponses": Array [
+            Object {
+              "ErrorCode": 404,
+              "ResponseCode": 404,
+              "ResponsePagePath": "404.html",
+            },
+          ],
           "DefaultCacheBehavior": Object {
             "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
             "Compress": true,
@@ -772,6 +779,7 @@ Object {
             "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
             "ViewerProtocolPolicy": "allow-all",
           },
+          "DefaultRootObject": "index.html",
           "Enabled": true,
           "HttpVersion": "http2",
           "IPV6Enabled": true,
@@ -1605,6 +1613,13 @@ Object {
           "Aliases": Array [
             "nextjs-serverless-static-site-my-feature.tylangesmith.com",
           ],
+          "CustomErrorResponses": Array [
+            Object {
+              "ErrorCode": 404,
+              "ResponseCode": 404,
+              "ResponsePagePath": "404.html",
+            },
+          ],
           "DefaultCacheBehavior": Object {
             "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
             "Compress": true,
@@ -1622,6 +1637,7 @@ Object {
             "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
             "ViewerProtocolPolicy": "allow-all",
           },
+          "DefaultRootObject": "index.html",
           "Enabled": true,
           "HttpVersion": "http2",
           "IPV6Enabled": true,

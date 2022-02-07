@@ -39,12 +39,10 @@ export interface CreateDistributionProps {
 export const createDistribution = (props: CreateDistributionProps): IDistribution => {
   const { scope, bucket, certificate, url, functionAssociation } = props
 
-  const origin = new S3Origin(bucket)
-
   return new Distribution(scope, 'distribution', {
     domainNames: [url],
     defaultBehavior: {
-      origin,
+      origin: new S3Origin(bucket),
       functionAssociations: [
         {
           function: functionAssociation,
@@ -52,6 +50,14 @@ export const createDistribution = (props: CreateDistributionProps): IDistributio
         }
       ]
     },
-    certificate
+    certificate,
+    defaultRootObject: 'index.html',
+    errorResponses: [
+      {
+        httpStatus: 404,
+        responseHttpStatus: 404,
+        responsePagePath: '404.html'
+      }
+    ]
   })
 }
