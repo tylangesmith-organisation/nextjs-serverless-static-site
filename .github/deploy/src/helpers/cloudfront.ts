@@ -1,7 +1,6 @@
 import { Stack } from '@aws-cdk/core'
 import { IBucket } from '@aws-cdk/aws-s3'
 import {
-  CloudFrontWebDistribution,
   Distribution,
   IDistribution,
   IFunction,
@@ -9,8 +8,7 @@ import {
   FunctionCode,
   FunctionEventType,
   OriginAccessIdentity,
-  IOriginAccessIdentity,
-  CachePolicy
+  IOriginAccessIdentity
 } from '@aws-cdk/aws-cloudfront'
 import { ICertificate } from '@aws-cdk/aws-certificatemanager'
 import { S3Origin } from '@aws-cdk/aws-cloudfront-origins'
