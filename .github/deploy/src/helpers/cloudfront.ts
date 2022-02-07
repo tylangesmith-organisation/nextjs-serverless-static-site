@@ -51,12 +51,12 @@ export const createDistribution = (props: CreateDistributionProps): IDistributio
       ]
     },
     certificate,
-    defaultRootObject: 'index.html',
+    defaultRootObject: '/index.html',
     errorResponses: [
       {
         httpStatus: 404,
         responseHttpStatus: 404,
-        responsePagePath: '404.html'
+        responsePagePath: '/404.html'
       }
     ]
   })

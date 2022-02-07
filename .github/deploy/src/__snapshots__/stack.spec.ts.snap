@@ -759,7 +759,7 @@ Object {
             Object {
               "ErrorCode": 404,
               "ResponseCode": 404,
-              "ResponsePagePath": "404.html",
+              "ResponsePagePath": "/404.html",
             },
           ],
           "DefaultCacheBehavior": Object {
@@ -779,7 +779,7 @@ Object {
             "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
             "ViewerProtocolPolicy": "allow-all",
           },
-          "DefaultRootObject": "index.html",
+          "DefaultRootObject": "/index.html",
           "Enabled": true,
           "HttpVersion": "http2",
           "IPV6Enabled": true,
@@ -1617,7 +1617,7 @@ Object {
             Object {
               "ErrorCode": 404,
               "ResponseCode": 404,
-              "ResponsePagePath": "404.html",
+              "ResponsePagePath": "/404.html",
             },
           ],
           "DefaultCacheBehavior": Object {
@@ -1637,7 +1637,7 @@ Object {
             "TargetOriginId": "staticWebsitedistributionOrigin1D751FEF3",
             "ViewerProtocolPolicy": "allow-all",
           },
-          "DefaultRootObject": "index.html",
+          "DefaultRootObject": "/index.html",
           "Enabled": true,
           "HttpVersion": "http2",
           "IPV6Enabled": true,
