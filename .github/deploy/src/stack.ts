@@ -1,6 +1,6 @@
 import { App, Stack, StackProps } from '@aws-cdk/core'
 import { getBranchedSubDomainName, getUrl } from './helpers/helper'
-import { createStaticWebsiteBucket, createStaticWebsiteBucketDeployment } from './helpers/bucket'
+import { createBucket, createBucketDeployment } from './helpers/bucket'
 import { getHostedZone, createARecordForDistribution } from './helpers/route53'
 import { createCertificate } from './helpers/certificate'
 import { createFunction, createDistribution } from './helpers/cloudfront'
@@ -37,8 +37,8 @@ export default class StaticWebsiteStack extends Stack {
     })
 
     // Let's create somewhere to store our static website content
-    // For that we can use an S3 bucket with static website hosting enabled
-    const staticWebsiteBucket = createStaticWebsiteBucket({
+    // For that we can use an S3 bucket
+    const bucket = createBucket({
       scope: this,
       bucketName: url
     })
@@ -68,19 +68,13 @@ export default class StaticWebsiteStack extends Stack {
       filePath: './src/functions/mapperFunction.js'
     })
 
-    // // Create an access identity to allow our distribution to access our S3 bucket
-    // const originAccessIdentity = createOriginAccessIdentity({ scope: this })
-
-    // // Allow our access identity to read our S3 bucket content
-    // staticWebsiteBucket.grantRead(originAccessIdentity)
-
     // With those few components now created we can now create our CloudFront
     // distribution
     // This allows for our static website content to be propogated across a CDN
     // geographically closer to our users
     const distribution = createDistribution({
       scope: this,
-      staticWebsiteBucket,
+      bucket,
       certificate,
       url,
       functionAssociation
@@ -96,9 +90,9 @@ export default class StaticWebsiteStack extends Stack {
     })
 
     // Finally let's deploy our static content to our S3 bucket
-    createStaticWebsiteBucketDeployment({
+    createBucketDeployment({
       scope: this,
-      staticWebsiteBucket,
+      bucket,
       distribution,
       filePath: './out'
     })

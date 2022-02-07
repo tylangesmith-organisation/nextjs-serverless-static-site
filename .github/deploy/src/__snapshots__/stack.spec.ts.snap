@@ -122,7 +122,7 @@ Object {
         "Handler": "index.handler",
         "Layers": Array [
           Object {
-            "Ref": "staticWebsiteBucketDeploymentAwsCliLayer92C42D70",
+            "Ref": "bucketDeploymentAwsCliLayerE8107607",
           },
         ],
         "Role": Object {
@@ -225,7 +225,7 @@ Object {
               "Resource": Array [
                 Object {
                   "Fn::GetAtt": Array [
-                    "staticWebsiteBucketF3428350",
+                    "bucket43879C71",
                     "Arn",
                   ],
                 },
@@ -235,7 +235,7 @@ Object {
                     Array [
                       Object {
                         "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
+                          "bucket43879C71",
                           "Arn",
                         ],
                       },
@@ -314,7 +314,7 @@ Object {
             Array [
               "Lambda function for auto-deleting objects in ",
               Object {
-                "Ref": "staticWebsiteBucketF3428350",
+                "Ref": "bucket43879C71",
               },
               " S3 bucket.",
             ],
@@ -379,6 +379,224 @@ Object {
         "Type": "A",
       },
       "Type": "AWS::Route53::RecordSet",
+    },
+    "bucket43879C71": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "BucketName": "nextjs-serverless-static-site.tylangesmith.com",
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:auto-delete-objects",
+            "Value": "true",
+          },
+          Object {
+            "Key": "aws-cdk:cr-owned:ce37b207",
+            "Value": "true",
+          },
+        ],
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "bucketAutoDeleteObjectsCustomResource3F4990B2": Object {
+      "DeletionPolicy": "Delete",
+      "DependsOn": Array [
+        "bucketPolicy638F945D",
+      ],
+      "Properties": Object {
+        "BucketName": Object {
+          "Ref": "bucket43879C71",
+        },
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::S3AutoDeleteObjects",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "bucketDeploymentAwsCliLayerE8107607": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3Bucket59E5CFEF",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "/opt/awscli/aws",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "bucketDeploymentCustomResource88301B5C": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DestinationBucketName": Object {
+          "Ref": "bucket43879C71",
+        },
+        "DistributionId": Object {
+          "Ref": "distribution114A0A2A",
+        },
+        "Prune": true,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "Arn",
+          ],
+        },
+        "SourceBucketNames": Array [
+          Object {
+            "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+          },
+        ],
+        "SourceObjectKeys": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "Custom::CDKBucketDeployment",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "bucketPolicy638F945D": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "bucket43879C71",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+              ],
+              "Effect": "Allow",
+              "Principal": Object {
+                "AWS": Object {
+                  "Fn::GetAtt": Array [
+                    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                    "Arn",
+                  ],
+                },
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "bucket43879C71",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "bucket43879C71",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Principal": Object {
+                "CanonicalUser": Object {
+                  "Fn::GetAtt": Array [
+                    "distributionOrigin1S3OriginC4E11128",
+                    "S3CanonicalUserId",
+                  ],
+                },
+              },
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "bucket43879C71",
+                        "Arn",
+                      ],
+                    },
+                    "/*",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
     },
     "certificateCertificateRequestorFunction5D4BA95F": Object {
       "DependsOn": Array [
@@ -561,7 +779,7 @@ Object {
             Object {
               "DomainName": Object {
                 "Fn::GetAtt": Array [
-                  "staticWebsiteBucketF3428350",
+                  "bucket43879C71",
                   "RegionalDomainName",
                 ],
               },
@@ -627,224 +845,6 @@ function handler (event) {
         "Name": "mapping-staticWebsite",
       },
       "Type": "AWS::CloudFront::Function",
-    },
-    "staticWebsiteBucketAutoDeleteObjectsCustomResource655B1F89": Object {
-      "DeletionPolicy": "Delete",
-      "DependsOn": Array [
-        "staticWebsiteBucketPolicy51D4ABCA",
-      ],
-      "Properties": Object {
-        "BucketName": Object {
-          "Ref": "staticWebsiteBucketF3428350",
-        },
-        "ServiceToken": Object {
-          "Fn::GetAtt": Array [
-            "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
-            "Arn",
-          ],
-        },
-      },
-      "Type": "Custom::S3AutoDeleteObjects",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "staticWebsiteBucketDeploymentAwsCliLayer92C42D70": Object {
-      "Properties": Object {
-        "Content": Object {
-          "S3Bucket": Object {
-            "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3Bucket59E5CFEF",
-          },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-        "Description": "/opt/awscli/aws",
-      },
-      "Type": "AWS::Lambda::LayerVersion",
-    },
-    "staticWebsiteBucketDeploymentCustomResource0139D91B": Object {
-      "DeletionPolicy": "Delete",
-      "Properties": Object {
-        "DestinationBucketName": Object {
-          "Ref": "staticWebsiteBucketF3428350",
-        },
-        "DistributionId": Object {
-          "Ref": "distribution114A0A2A",
-        },
-        "Prune": true,
-        "ServiceToken": Object {
-          "Fn::GetAtt": Array [
-            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
-            "Arn",
-          ],
-        },
-        "SourceBucketNames": Array [
-          Object {
-            "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
-          },
-        ],
-        "SourceObjectKeys": Array [
-          Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        ],
-      },
-      "Type": "Custom::CDKBucketDeployment",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "staticWebsiteBucketF3428350": Object {
-      "DeletionPolicy": "Delete",
-      "Properties": Object {
-        "BucketName": "nextjs-serverless-static-site.tylangesmith.com",
-        "Tags": Array [
-          Object {
-            "Key": "aws-cdk:auto-delete-objects",
-            "Value": "true",
-          },
-          Object {
-            "Key": "aws-cdk:cr-owned:e1562d3f",
-            "Value": "true",
-          },
-        ],
-      },
-      "Type": "AWS::S3::Bucket",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "staticWebsiteBucketPolicy51D4ABCA": Object {
-      "Properties": Object {
-        "Bucket": Object {
-          "Ref": "staticWebsiteBucketF3428350",
-        },
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
-                "s3:GetBucket*",
-                "s3:List*",
-                "s3:DeleteObject*",
-              ],
-              "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::GetAtt": Array [
-                    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
-                    "Arn",
-                  ],
-                },
-              },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
-                    "staticWebsiteBucketF3428350",
-                    "Arn",
-                  ],
-                },
-                Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
-                          "Arn",
-                        ],
-                      },
-                      "/*",
-                    ],
-                  ],
-                },
-              ],
-            },
-            Object {
-              "Action": "s3:GetObject",
-              "Effect": "Allow",
-              "Principal": Object {
-                "CanonicalUser": Object {
-                  "Fn::GetAtt": Array [
-                    "distributionOrigin1S3OriginC4E11128",
-                    "S3CanonicalUserId",
-                  ],
-                },
-              },
-              "Resource": Object {
-                "Fn::Join": Array [
-                  "",
-                  Array [
-                    Object {
-                      "Fn::GetAtt": Array [
-                        "staticWebsiteBucketF3428350",
-                        "Arn",
-                      ],
-                    },
-                    "/*",
-                  ],
-                ],
-              },
-            },
-          ],
-          "Version": "2012-10-17",
-        },
-      },
-      "Type": "AWS::S3::BucketPolicy",
     },
   },
 }
@@ -972,7 +972,7 @@ Object {
         "Handler": "index.handler",
         "Layers": Array [
           Object {
-            "Ref": "staticWebsiteBucketDeploymentAwsCliLayer92C42D70",
+            "Ref": "bucketDeploymentAwsCliLayerE8107607",
           },
         ],
         "Role": Object {
@@ -1075,7 +1075,7 @@ Object {
               "Resource": Array [
                 Object {
                   "Fn::GetAtt": Array [
-                    "staticWebsiteBucketF3428350",
+                    "bucket43879C71",
                     "Arn",
                   ],
                 },
@@ -1085,7 +1085,7 @@ Object {
                     Array [
                       Object {
                         "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
+                          "bucket43879C71",
                           "Arn",
                         ],
                       },
@@ -1164,7 +1164,7 @@ Object {
             Array [
               "Lambda function for auto-deleting objects in ",
               Object {
-                "Ref": "staticWebsiteBucketF3428350",
+                "Ref": "bucket43879C71",
               },
               " S3 bucket.",
             ],
@@ -1229,6 +1229,224 @@ Object {
         "Type": "A",
       },
       "Type": "AWS::Route53::RecordSet",
+    },
+    "bucket43879C71": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "BucketName": "nextjs-serverless-static-site-my-feature.tylangesmith.com",
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:auto-delete-objects",
+            "Value": "true",
+          },
+          Object {
+            "Key": "aws-cdk:cr-owned:ce37b207",
+            "Value": "true",
+          },
+        ],
+      },
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "bucketAutoDeleteObjectsCustomResource3F4990B2": Object {
+      "DeletionPolicy": "Delete",
+      "DependsOn": Array [
+        "bucketPolicy638F945D",
+      ],
+      "Properties": Object {
+        "BucketName": Object {
+          "Ref": "bucket43879C71",
+        },
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::S3AutoDeleteObjects",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "bucketDeploymentAwsCliLayerE8107607": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3Bucket59E5CFEF",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "/opt/awscli/aws",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "bucketDeploymentCustomResource88301B5C": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DestinationBucketName": Object {
+          "Ref": "bucket43879C71",
+        },
+        "DistributionId": Object {
+          "Ref": "distribution114A0A2A",
+        },
+        "Prune": true,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "Arn",
+          ],
+        },
+        "SourceBucketNames": Array [
+          Object {
+            "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
+          },
+        ],
+        "SourceObjectKeys": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "Custom::CDKBucketDeployment",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "bucketPolicy638F945D": Object {
+      "Properties": Object {
+        "Bucket": Object {
+          "Ref": "bucket43879C71",
+        },
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+              ],
+              "Effect": "Allow",
+              "Principal": Object {
+                "AWS": Object {
+                  "Fn::GetAtt": Array [
+                    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                    "Arn",
+                  ],
+                },
+              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "bucket43879C71",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "bucket43879C71",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Principal": Object {
+                "CanonicalUser": Object {
+                  "Fn::GetAtt": Array [
+                    "distributionOrigin1S3OriginC4E11128",
+                    "S3CanonicalUserId",
+                  ],
+                },
+              },
+              "Resource": Object {
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    Object {
+                      "Fn::GetAtt": Array [
+                        "bucket43879C71",
+                        "Arn",
+                      ],
+                    },
+                    "/*",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::S3::BucketPolicy",
     },
     "certificateCertificateRequestorFunction5D4BA95F": Object {
       "DependsOn": Array [
@@ -1411,7 +1629,7 @@ Object {
             Object {
               "DomainName": Object {
                 "Fn::GetAtt": Array [
-                  "staticWebsiteBucketF3428350",
+                  "bucket43879C71",
                   "RegionalDomainName",
                 ],
               },
@@ -1477,224 +1695,6 @@ function handler (event) {
         "Name": "mapping-staticWebsite",
       },
       "Type": "AWS::CloudFront::Function",
-    },
-    "staticWebsiteBucketAutoDeleteObjectsCustomResource655B1F89": Object {
-      "DeletionPolicy": "Delete",
-      "DependsOn": Array [
-        "staticWebsiteBucketPolicy51D4ABCA",
-      ],
-      "Properties": Object {
-        "BucketName": Object {
-          "Ref": "staticWebsiteBucketF3428350",
-        },
-        "ServiceToken": Object {
-          "Fn::GetAtt": Array [
-            "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
-            "Arn",
-          ],
-        },
-      },
-      "Type": "Custom::S3AutoDeleteObjects",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "staticWebsiteBucketDeploymentAwsCliLayer92C42D70": Object {
-      "Properties": Object {
-        "Content": Object {
-          "S3Bucket": Object {
-            "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3Bucket59E5CFEF",
-          },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters187e7a21dd5d55d36f1f45007ff6bbc5713cb0866ca86224c0f1f86b3d1e76a0S3VersionKey7EE70F5C",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-        "Description": "/opt/awscli/aws",
-      },
-      "Type": "AWS::Lambda::LayerVersion",
-    },
-    "staticWebsiteBucketDeploymentCustomResource0139D91B": Object {
-      "DeletionPolicy": "Delete",
-      "Properties": Object {
-        "DestinationBucketName": Object {
-          "Ref": "staticWebsiteBucketF3428350",
-        },
-        "DistributionId": Object {
-          "Ref": "distribution114A0A2A",
-        },
-        "Prune": true,
-        "ServiceToken": Object {
-          "Fn::GetAtt": Array [
-            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
-            "Arn",
-          ],
-        },
-        "SourceBucketNames": Array [
-          Object {
-            "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3BucketE83B8C93",
-          },
-        ],
-        "SourceObjectKeys": Array [
-          Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9237631b006453b8d2b275e61053dbf9c1ec0da492720b99a9d83ce3b802c656S3VersionKeyEE13941B",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        ],
-      },
-      "Type": "Custom::CDKBucketDeployment",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "staticWebsiteBucketF3428350": Object {
-      "DeletionPolicy": "Delete",
-      "Properties": Object {
-        "BucketName": "nextjs-serverless-static-site-my-feature.tylangesmith.com",
-        "Tags": Array [
-          Object {
-            "Key": "aws-cdk:auto-delete-objects",
-            "Value": "true",
-          },
-          Object {
-            "Key": "aws-cdk:cr-owned:e1562d3f",
-            "Value": "true",
-          },
-        ],
-      },
-      "Type": "AWS::S3::Bucket",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "staticWebsiteBucketPolicy51D4ABCA": Object {
-      "Properties": Object {
-        "Bucket": Object {
-          "Ref": "staticWebsiteBucketF3428350",
-        },
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
-                "s3:GetBucket*",
-                "s3:List*",
-                "s3:DeleteObject*",
-              ],
-              "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::GetAtt": Array [
-                    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
-                    "Arn",
-                  ],
-                },
-              },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
-                    "staticWebsiteBucketF3428350",
-                    "Arn",
-                  ],
-                },
-                Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
-                          "Arn",
-                        ],
-                      },
-                      "/*",
-                    ],
-                  ],
-                },
-              ],
-            },
-            Object {
-              "Action": "s3:GetObject",
-              "Effect": "Allow",
-              "Principal": Object {
-                "CanonicalUser": Object {
-                  "Fn::GetAtt": Array [
-                    "distributionOrigin1S3OriginC4E11128",
-                    "S3CanonicalUserId",
-                  ],
-                },
-              },
-              "Resource": Object {
-                "Fn::Join": Array [
-                  "",
-                  Array [
-                    Object {
-                      "Fn::GetAtt": Array [
-                        "staticWebsiteBucketF3428350",
-                        "Arn",
-                      ],
-                    },
-                    "/*",
-                  ],
-                ],
-              },
-            },
-          ],
-          "Version": "2012-10-17",
-        },
-      },
-      "Type": "AWS::S3::BucketPolicy",
     },
   },
 }

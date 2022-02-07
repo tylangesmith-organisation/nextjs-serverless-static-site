@@ -3,35 +3,33 @@ import { Bucket, IBucket } from '@aws-cdk/aws-s3'
 import { BucketDeployment, Source } from '@aws-cdk/aws-s3-deployment'
 import { IDistribution } from '@aws-cdk/aws-cloudfront'
 
-export interface CreateStaticWebsiteBucketProps {
+export interface CreateBucketProps {
   scope: Stack;
   bucketName: string;
 }
 
-export const createStaticWebsiteBucket = (props: CreateStaticWebsiteBucketProps): IBucket => {
+export const createBucket = (props: CreateBucketProps): IBucket => {
   const { scope, bucketName } = props
 
-  return new Bucket(scope, 'staticWebsiteBucket', {
+  return new Bucket(scope, 'bucket', {
     bucketName,
-    // websiteIndexDocument: 'index.html',
-    // websiteErrorDocument: '404.html',
     autoDeleteObjects: true,
     removalPolicy: RemovalPolicy.DESTROY
   })
 }
 
-export interface CreateStaticWebsiteBucketDeploymentProps {
+export interface CreateBucketDeploymentProps {
   scope: Stack;
-  staticWebsiteBucket: IBucket;
+  bucket: IBucket;
   distribution: IDistribution;
   filePath: string;
 }
 
-export const createStaticWebsiteBucketDeployment = (props: CreateStaticWebsiteBucketDeploymentProps): BucketDeployment => {
-  const { scope, staticWebsiteBucket, distribution, filePath } = props
+export const createBucketDeployment = (props: CreateBucketDeploymentProps): BucketDeployment => {
+  const { scope, bucket, distribution, filePath } = props
 
-  return new BucketDeployment(scope, 'staticWebsiteBucketDeployment', {
-    destinationBucket: staticWebsiteBucket,
+  return new BucketDeployment(scope, 'bucketDeployment', {
+    destinationBucket: bucket,
     sources: [Source.asset(filePath)],
     distribution
   })
