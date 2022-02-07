@@ -632,14 +632,6 @@ function handler (event) {
       },
       "Type": "AWS::CloudFront::Function",
     },
-    "originAccessIdentity402DAA30": Object {
-      "Properties": Object {
-        "CloudFrontOriginAccessIdentityConfig": Object {
-          "Comment": "Allows CloudFront to reach the bucket",
-        },
-      },
-      "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
-    },
     "staticWebsiteBucketAutoDeleteObjectsCustomResource655B1F89": Object {
       "DeletionPolicy": "Delete",
       "DependsOn": Array [
@@ -804,44 +796,6 @@ function handler (event) {
                   "Fn::GetAtt": Array [
                     "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
                     "Arn",
-                  ],
-                },
-              },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
-                    "staticWebsiteBucketF3428350",
-                    "Arn",
-                  ],
-                },
-                Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
-                          "Arn",
-                        ],
-                      },
-                      "/*",
-                    ],
-                  ],
-                },
-              ],
-            },
-            Object {
-              "Action": Array [
-                "s3:GetObject*",
-                "s3:GetBucket*",
-                "s3:List*",
-              ],
-              "Effect": "Allow",
-              "Principal": Object {
-                "CanonicalUser": Object {
-                  "Fn::GetAtt": Array [
-                    "originAccessIdentity402DAA30",
-                    "S3CanonicalUserId",
                   ],
                 },
               },
@@ -1510,14 +1464,6 @@ function handler (event) {
       },
       "Type": "AWS::CloudFront::Function",
     },
-    "originAccessIdentity402DAA30": Object {
-      "Properties": Object {
-        "CloudFrontOriginAccessIdentityConfig": Object {
-          "Comment": "Allows CloudFront to reach the bucket",
-        },
-      },
-      "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
-    },
     "staticWebsiteBucketAutoDeleteObjectsCustomResource655B1F89": Object {
       "DeletionPolicy": "Delete",
       "DependsOn": Array [
@@ -1682,44 +1628,6 @@ function handler (event) {
                   "Fn::GetAtt": Array [
                     "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
                     "Arn",
-                  ],
-                },
-              },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
-                    "staticWebsiteBucketF3428350",
-                    "Arn",
-                  ],
-                },
-                Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
-                          "staticWebsiteBucketF3428350",
-                          "Arn",
-                        ],
-                      },
-                      "/*",
-                    ],
-                  ],
-                },
-              ],
-            },
-            Object {
-              "Action": Array [
-                "s3:GetObject*",
-                "s3:GetBucket*",
-                "s3:List*",
-              ],
-              "Effect": "Allow",
-              "Principal": Object {
-                "CanonicalUser": Object {
-                  "Fn::GetAtt": Array [
-                    "originAccessIdentity402DAA30",
-                    "S3CanonicalUserId",
                   ],
                 },
               },

@@ -45,15 +45,12 @@ export interface CreateDistributionProps {
   certificate: ICertificate;
   url: string;
   functionAssociation: IFunction;
-  originAccessIdentity: IOriginAccessIdentity;
 }
 
 export const createDistribution = (props: CreateDistributionProps): IDistribution => {
-  const { scope, staticWebsiteBucket, certificate, url, functionAssociation, originAccessIdentity } = props
+  const { scope, staticWebsiteBucket, certificate, url, functionAssociation } = props
 
-  const origin = new S3Origin(staticWebsiteBucket, {
-    originAccessIdentity
-  })
+  const origin = new S3Origin(staticWebsiteBucket)
 
   return new Distribution(scope, 'distribution', {
     domainNames: [url],
