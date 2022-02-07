@@ -55,27 +55,14 @@ export const createDistribution = (props: CreateDistributionProps): IDistributio
   return new Distribution(scope, 'distribution', {
     domainNames: [url],
     defaultBehavior: {
-      origin
+      origin,
+      functionAssociations: [
+        {
+          function: functionAssociation,
+          eventType: FunctionEventType.VIEWER_REQUEST
+        }
+      ]
     },
-    additionalBehaviors: {
-      '/_next/*': {
-        origin,
-        functionAssociations: [
-          {
-            function: functionAssociation,
-            eventType: FunctionEventType.VIEWER_REQUEST
-          }
-        ]
-      }
-    },
-    certificate,
-    defaultRootObject: 'index.html',
-    errorResponses: [
-      {
-        httpStatus: 404,
-        responseHttpStatus: 200,
-        responsePagePath: '/404.html'
-      }
-    ]
+    certificate
   })
 }
