@@ -1,12 +1,11 @@
 import { App, Stack, StackProps } from '@aws-cdk/core'
-import { getBranchedSubDomainName, getUrl } from './helpers/helper'
 import { createBucket, createBucketDeployment } from './helpers/bucket'
 import { getHostedZone, createARecordForDistribution } from './helpers/route53'
 import { createCertificate } from './helpers/certificate'
 import { createFunction, createDistribution } from './helpers/cloudfront'
 
 export interface Props extends StackProps {
-  branchName: string;
+  url: string;
   domainName: string;
   subDomainName: string
 }
@@ -14,27 +13,7 @@ export interface Props extends StackProps {
 export default class StaticWebsiteStack extends Stack {
   constructor (scope: App, props: Props) {
     super(scope, 'staticWebsite', props)
-    const { branchName, domainName, subDomainName } = props
-    // Prop value examples
-    // branchName: my-feature
-    // domainName: tylangesmith.com
-    // subDomainName: nextjs-serverless-static-site
-
-    // First let's branch our subDomain
-    // branchedSubDomainName: ${subDomainName}-${branch}
-    //                        e.g. nextjs-serverless-static-site-my-feature
-    const branchedSubDomainName = getBranchedSubDomainName({
-      branchName,
-      subDomainName
-    })
-
-    // Now we want to combine this with our domainName to get something close
-    // to the final url
-    // url: e.g. nextjs-serverless-static-site-my-feature.tylangesmith.com
-    const url = getUrl({
-      domainName,
-      branchedSubDomainName
-    })
+    const { url, domainName, subDomainName } = props
 
     // Let's create somewhere to store our static website content
     // For that we can use an S3 bucket
@@ -85,7 +64,7 @@ export default class StaticWebsiteStack extends Stack {
     createARecordForDistribution({
       scope: this,
       hostedZone,
-      branchedSubDomainName,
+      subDomainName,
       distribution
     })
 

@@ -1233,7 +1233,7 @@ Object {
           },
         },
         "HostedZoneId": "",
-        "Name": "nextjs-serverless-static-site-my-feature.tylangesmith.com.",
+        "Name": "nextjs-serverless-static-site.tylangesmith.com.",
         "Type": "A",
       },
       "Type": "AWS::Route53::RecordSet",
