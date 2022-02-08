@@ -14,6 +14,7 @@ export const createCertificate = (props: CreateCertificateProps): ICertificate =
   return new DnsValidatedCertificate(scope, 'certificate', {
     domainName: url,
     hostedZone,
-    region: 'us-east-1'
+    region: 'us-east-1',
+    cleanupRoute53Records: true
   })
 }

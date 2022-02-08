@@ -20,13 +20,13 @@ describe('Stack', () => {
   it('should create the expected stack for the master branch', () => {
     // Arrange
     const app = new App()
-    const branchName = 'master'
     const domainName = 'tylangesmith.com'
     const subDomainName = 'nextjs-serverless-static-site'
+    const url = `${subDomainName}.${domainName}`
 
     // Act
     const stack = new Stack(app, {
-      branchName,
+      url,
       domainName,
       subDomainName,
       env: {
@@ -44,10 +44,11 @@ describe('Stack', () => {
     const branchName = 'my-feature'
     const domainName = 'tylangesmith.com'
     const subDomainName = 'nextjs-serverless-static-site'
+    const url = `${subDomainName}-${branchName}.${domainName}`
 
     // Act
     const stack = new Stack(app, {
-      branchName,
+      url,
       domainName,
       subDomainName,
       env: {

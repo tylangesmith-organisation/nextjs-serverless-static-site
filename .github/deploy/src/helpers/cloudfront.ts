@@ -1,16 +1,15 @@
 import { Stack } from '@aws-cdk/core'
 import { IBucket } from '@aws-cdk/aws-s3'
 import {
-  CloudFrontWebDistribution,
+  Distribution,
   IDistribution,
   IFunction,
   Function,
   FunctionCode,
-  FunctionEventType,
-  OriginAccessIdentity,
-  IOriginAccessIdentity
+  FunctionEventType
 } from '@aws-cdk/aws-cloudfront'
 import { ICertificate } from '@aws-cdk/aws-certificatemanager'
+import { S3Origin } from '@aws-cdk/aws-cloudfront-origins'
 
 export interface CreateFunctionProps {
   scope: Stack;
@@ -29,55 +28,36 @@ export const createFunction = (props: CreateFunctionProps): IFunction => {
   })
 }
 
-export interface CreateOriginAccessIdentityProps {
-  scope: Stack
-}
-
-export const createOriginAccessIdentity = (props: CreateOriginAccessIdentityProps): IOriginAccessIdentity => {
-  const { scope } = props
-  return new OriginAccessIdentity(scope, 'originAccessIdentity')
-}
-
 export interface CreateDistributionProps {
   scope: Stack;
-  staticWebsiteBucket: IBucket;
+  bucket: IBucket;
   certificate: ICertificate;
   url: string;
   functionAssociation: IFunction;
-  originAccessIdentity: IOriginAccessIdentity;
 }
 
 export const createDistribution = (props: CreateDistributionProps): IDistribution => {
-  const { scope, staticWebsiteBucket, certificate, url, functionAssociation, originAccessIdentity } = props
+  const { scope, bucket, certificate, url, functionAssociation } = props
 
-  return new CloudFrontWebDistribution(scope, 'distribution', {
-    originConfigs: [
+  return new Distribution(scope, 'distribution', {
+    domainNames: [url],
+    defaultBehavior: {
+      origin: new S3Origin(bucket),
+      functionAssociations: [
+        {
+          function: functionAssociation,
+          eventType: FunctionEventType.VIEWER_REQUEST
+        }
+      ]
+    },
+    certificate,
+    defaultRootObject: '/index.html',
+    errorResponses: [
       {
-        s3OriginSource: {
-          originAccessIdentity,
-          s3BucketSource: staticWebsiteBucket
-        },
-        behaviors: [
-          {
-            isDefaultBehavior: true,
-            functionAssociations: [
-              {
-                function: functionAssociation,
-                eventType: FunctionEventType.VIEWER_REQUEST
-              }
-            ],
-            pathPattern: '/_next/*'
-          }
-        ]
+        httpStatus: 404,
+        responseHttpStatus: 404,
+        responsePagePath: '/404.html'
       }
-    ],
-    viewerCertificate: {
-      aliases: [url],
-      props: {
-        acmCertificateArn: certificate.certificateArn,
-        sslSupportMethod: 'sni-only',
-        minimumProtocolVersion: 'TLSv1'
-      }
-    }
+    ]
   })
 }
